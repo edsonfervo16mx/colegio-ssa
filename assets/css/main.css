@@ -1,3 +1,20 @@
 .area{
 	margin-top: 15px !important;
 }
+nav{
+	background-color: #1e88e5 !important;
+}
+
+main, footer {
+    padding-left: 240px;
+}
+
+@media only screen and (max-width: 992px){
+	header, main, footer {
+    	padding-left: 0;
+	}
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
