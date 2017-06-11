@@ -4,14 +4,42 @@
 				<a href="#!" class="brand-logo">SSA</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="top-nav right hide-on-med-and-down">
-					<li><a href="#">Perfil </a></li>
+					<li>
+						<a href="#">
+							<?php echo $_SESSION['usuario']; ?>
+						</a>
+					</li>
 				</ul>
 				<ul class="side-nav fixed collapsible collapsible-accordion" id="mobile-demo" style="transform: translateX(0%);">
-					<li><a href="#" class="collapsible-header waves-effect waves-teal">Inicio</a></li>
-					<li><a href="#" class="collapsible-header waves-effect waves-teal">Alumnos</a></li>
-					<li><a href="#" class="collapsible-header waves-effect waves-teal">Grupos</a></li>
-					<li><a href="#" class="collapsible-header waves-effect waves-teal">Tutores</a></li>
-					<li><a class="collapsible-header waves-effect waves-teal">Inscripción</a>
+					<li>
+						<a href="home.php" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">dashboard</i>Inicio
+						</a>
+					</li>
+					<li>
+						<a href="#" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">perm_identity</i>Alumnos
+						</a>
+					</li>
+					<li>
+						<a href="#" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">perm_contact_calendar</i>Tutores
+						</a>
+					</li>
+					<li>
+						<a href="ciclo.php" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">view_agenda</i>Ciclo
+						</a>
+					</li>
+					<li>
+						<a href="#" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">view_list</i>Grupos
+						</a>
+					</li>
+					<li>
+						<a class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">input</i>Inscripción
+						</a>
 						<div class="collapsible-body">
 							<ul>
 								<li><a href="#">Precios</a></li>
@@ -20,7 +48,10 @@
 							</ul>
 						</div>
 					</li>
-					<li><a class="collapsible-header waves-effect waves-teal">Colegiaturas</a>
+					<li>
+						<a class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">recent_actors</i>Colegiaturas
+						</a>
 						<div class="collapsible-body">
 							<ul>
 								<li><a href="#">Precios</a></li>
@@ -29,7 +60,10 @@
 							</ul>
 						</div>
 					</li>
-					<li><a class="collapsible-header waves-effect waves-teal">Servicios</a>
+					<li>
+						<a class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">view_carousel</i>Servicios
+						</a>
 						<div class="collapsible-body">
 							<ul>
 								<li><a href="#">Precios</a></li>
@@ -38,7 +72,10 @@
 							</ul>
 						</div>
 					</li>
-					<li><a class="collapsible-header waves-effect waves-teal">Tienda</a>
+					<li>
+						<a class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">shopping_cart</i>Tienda
+						</a>
 						<div class="collapsible-body">
 							<ul>
 								<li><a href="#">Inventario</a></li>
@@ -46,8 +83,16 @@
 							</ul>
 						</div>
 					</li>
-					<li><a href="#" class="collapsible-header waves-effect waves-teal">Gastos</a></li>
-					<li><a href="#" class="collapsible-header waves-effect waves-teal">Estados</a></li>
+					<li>
+						<a href="#" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">call_received</i>Gastos
+						</a>
+					</li>
+					<li>
+						<a href="#" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">assessment</i>Estados
+						</a>
+					</li>
 				</ul>
 			</div>
 		</nav>

@@ -23,7 +23,7 @@
 			<main>
 			<div class="container area">
 				<?php
-					require_once 'module/colegio/view.datosgenerales.php';
+					require_once 'module/ciclo/list.ciclos.php';
 				?>
 			</div>
 			</main>

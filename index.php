@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Jean Piaget - SSA</title>
-	<?php 
+	<?php
 		require_once 'inc.global/local.files.styles.php';
 	?>
 	<!---->
@@ -20,19 +20,18 @@
 						<span class="card-title">Colegio Jean Piaget</span>
 					</div>
 					<div class="card-content">
-						<form action="" method="POST">
+						<form action="validate.php" method="POST">
 							<div class="row">
 								<div class="input-field col s10 offset-s1">
-									<input type="text" name="usuario" id="usuario" placeholder="Usuario">
+									<input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
 									<label for="usuario">Nombre de Usuario</label>
 								</div>
 								<div class="input-field col s10 offset-s1">
-									<input type="password" name="pass" id="pass" placeholder="Contraseña">
+									<input type="password" name="pass" id="pass" placeholder="Contraseña" required>
 									<label for="pass">Contraseña de Usuario</label>
 								</div>
 								<div class="input-field col s10 offset-s1 right-align">
-									<!--<input type="submit" value="Entrar" class="waves-effect waves-light btn">-->
-									<a href="web/index.php" class="waves-effect waves-light btn">Entrar</a>
+									<input type="submit" value="Entrar" class="waves-effect waves-light btn">
 								</div>
 							</div>
 						</form>
