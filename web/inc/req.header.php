@@ -17,9 +17,17 @@
 						</a>
 					</li>
 					<li>
-						<a href="#" class="collapsible-header waves-effect waves-teal">
+						<a class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">perm_identity</i>Alumnos
 						</a>
+						<div class="collapsible-body">
+							<ul>
+								<li><a href="alumnos.php"><i class="material-icons">view_list</i>Lista</a></li>
+								<li><a href="alumnoregistro.php"><i class="material-icons">add</i>Agregar</a></li>
+								<li><a href="#"><i class="material-icons">mode_edit</i>Modificar</a></li>
+								<li><a href="#"><i class="material-icons">delete</i>Baja</a></li>
+							</ul>
+						</div>
 					</li>
 					<li>
 						<a href="#" class="collapsible-header waves-effect waves-teal">
@@ -27,13 +35,13 @@
 						</a>
 					</li>
 					<li>
-						<a href="ciclo.php" class="collapsible-header waves-effect waves-teal">
-							<i class="material-icons">view_agenda</i>Ciclo
+						<a href="ciclos.php" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">view_agenda</i>Ciclos
 						</a>
 					</li>
 					<li>
 						<a href="#" class="collapsible-header waves-effect waves-teal">
-							<i class="material-icons">view_list</i>Grupos
+							<i class="material-icons">view_quilt</i>Grupos
 						</a>
 					</li>
 					<li>

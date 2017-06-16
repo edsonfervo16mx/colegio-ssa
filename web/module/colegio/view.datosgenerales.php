@@ -8,7 +8,7 @@
 
 ?>
 <div class="row">
-	<h1 class="grey-text text-darken-1 center">Sistema Académico</h1>
+	<h3 class="grey-text text-darken-1 center">Sistema Académico</h3>
 	<div class="col m12">
 		<div class="card-panel grey lighten-2 center-align">
 			<span class="grey-text text-darken-4">
@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	<div class="col m12">
-		<table class="responsive-table">
+		<table id="example" class="mdl-data-table">
 			<thead>
 				<tr>
 					<th>Clave</th>

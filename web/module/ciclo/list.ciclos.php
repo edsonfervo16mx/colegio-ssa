@@ -4,10 +4,10 @@
 ?>
 <div class="row">
 	<div class="col m12">
-		<h1 class="grey-text text-darken-1">Ciclos Escolares</h1>
+		<h4 class="grey-text text-darken-1">Ciclos Escolares</h4>
 	</div>
 	<div class="col m12">
-		<table>
+		<table id="example" class="mdl-data-table">
 			<thead>
 				<tr>
 					<td>Clave</td>
