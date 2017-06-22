@@ -28,7 +28,7 @@
 						echo '<td>'.$colAlumno->nombre_campus.'</td>';
 						echo '
 							<td>
-								<a href="#">
+								<a href="alumno-ver.php?curp='.$colAlumno->curp_alumno.'">
 									<i class="material-icons">visibility</i>
 								</a>
 							</td>';

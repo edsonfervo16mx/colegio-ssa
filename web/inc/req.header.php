@@ -22,10 +22,10 @@
 						</a>
 						<div class="collapsible-body">
 							<ul>
-								<li><a href="alumnos.php"><i class="material-icons">view_list</i>Lista</a></li>
-								<li><a href="alumnoregistro.php"><i class="material-icons">add</i>Agregar</a></li>
-								<li><a href="#"><i class="material-icons">mode_edit</i>Modificar</a></li>
-								<li><a href="#"><i class="material-icons">delete</i>Baja</a></li>
+								<li><a href="alumno-lista.php"><i class="material-icons">view_list</i>Lista</a></li>
+								<li><a href="alumno-registro.php"><i class="material-icons">add</i>Agregar</a></li>
+								<li><a href="alumno-lista.php"><i class="material-icons">mode_edit</i>Modificar</a></li>
+								<li><a href="alumno-baja.php"><i class="material-icons">delete</i>Baja</a></li>
 							</ul>
 						</div>
 					</li>
@@ -35,7 +35,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="ciclos.php" class="collapsible-header waves-effect waves-teal">
+						<a href="ciclo-lista.php" class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">view_agenda</i>Ciclos
 						</a>
 					</li>
@@ -97,7 +97,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="#" class="collapsible-header waves-effect waves-teal">
+						<a href="estado-general.php" class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">assessment</i>Estados
 						</a>
 					</li>
