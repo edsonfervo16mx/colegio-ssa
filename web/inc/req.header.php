@@ -40,8 +40,13 @@
 						</a>
 					</li>
 					<li>
-						<a href="#" class="collapsible-header waves-effect waves-teal">
+						<a href="grupos.php" class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">view_quilt</i>Grupos
+						</a>
+					</li>
+					<li>
+						<a href="#" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">assignment</i>Listas de Grupo
 						</a>
 					</li>
 					<li>
