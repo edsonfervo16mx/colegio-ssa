@@ -44,11 +44,6 @@
 							echo '<input name="sexo" type="radio" id="'.$colSexo->cve_sexo.'" value="'.$colSexo->cve_sexo.'" checked><label for="'.$colSexo->cve_sexo.'">'.$colSexo->cve_sexo.'</label>';
 						}
 					?>
-					<!--
-					<input name="sexo" type="radio" id="f" value="FEMENINO" checked>
-					<label for="f">Femenino</label>
-					<input name="sexo" type="radio" id="m" value="MASCULINO">
-					<label for="m">Masculino</label>-->
 				</div>
 				<div class="input-field col m12 s12">
 					<input type="email" name="correo" id="correo" placeholder="Ingrese email" class="validate">

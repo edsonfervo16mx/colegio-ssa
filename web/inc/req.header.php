@@ -30,9 +30,16 @@
 						</div>
 					</li>
 					<li>
-						<a href="#" class="collapsible-header waves-effect waves-teal">
+						<a class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">perm_contact_calendar</i>Tutores
 						</a>
+						<div class="collapsible-body">
+							<ul>
+								<li><a href="tutor-lista.php"><i class="material-icons">view_list</i>Lista</a></li>
+								<li><a href="tutor-registro.php"><i class="material-icons">add</i>Agregar</a></li>
+								<li><a href="relacion-lista.php"><i class="material-icons">person_pin</i>Asignación</a></li>
+							</ul>
+						</div>
 					</li>
 					<li>
 						<a href="ciclo-lista.php" class="collapsible-header waves-effect waves-teal">
