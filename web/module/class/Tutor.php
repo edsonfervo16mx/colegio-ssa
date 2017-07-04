@@ -51,6 +51,23 @@
 			$dataBase->triggerSimple($key,$sql);
 			//print $sql;
 		}
+
+
+		public function consultaId($key,$nombre){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'SELECT tutor.cve_tutor from tutor where tutor.status_tutor = "active" and concat(tutor.apellidop_tutor," ",tutor.apellidom_tutor," ",tutor.nombre_tutor) = "'.$nombre.'" Limit 1';
+			$res = $dataBase->triggerSimple($key,$sql);
+			$i=0;
+			$line = null;
+			while ($row = mysqli_fetch_assoc($res)) {
+				$line[$i] = array_map('utf8_encode', $row) ;
+				$i++;
+			}
+			$data = json_encode($line);
+			$data = json_decode($data);
+			return ($data);
+		}
 	}
 
 ?>

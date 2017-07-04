@@ -23,7 +23,7 @@
 		public function ver($key, $id){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
-			$sql = 'SELECT relacion.cve_relacion, relacion.curp_alumno,concat(alumno.apellidop_alumno," ",alumno.apellidom_alumno," ",alumno.nombre_alumno)as nombre_completo_alumno,  relacion.cve_tutor, concat(tutor.apellidop_tutor," ",tutor.apellidom_tutor," ",tutor.nombre_tutor) as nombre_completo_tutor from relacion inner join alumno on (relacion.curp_alumno = alumno.curp_alumno) inner join tutor on (relacion.cve_tutor = tutor.cve_tutor) where relacion.status_relacion = "active" and relacion.cve_relacion ="'.$id.'"';
+			$sql = 'SELECT relacion.cve_relacion, relacion.curp_alumno,concat(alumno.apellidop_alumno," ",alumno.apellidom_alumno," ",alumno.nombre_alumno)as nombre_completo_alumno, alumno.cve_sexo as sexo_alumno, alumno.cve_campus, alumno.direccion_alumno, alumno.correo_alumno,alumno.telefono_alumno, alumno.observaciones_alumno ,relacion.cve_tutor, concat(tutor.apellidop_tutor," ",tutor.apellidom_tutor," ",tutor.nombre_tutor) as nombre_completo_tutor, tutor.correo_tutor,tutor.telefono_tutor,tutor.observaciones_tutor,tutor.cve_sexo as sexo_tutor from relacion inner join alumno on (relacion.curp_alumno = alumno.curp_alumno) inner join tutor on (relacion.cve_tutor = tutor.cve_tutor) where relacion.status_relacion = "active" and relacion.cve_relacion ="'.$id.'"';
 			$res = $dataBase->triggerSimple($key,$sql);
 			$i=0;
 			$line = null;
@@ -39,11 +39,12 @@
 		public function registrar($key, $atr){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
-			$sql = 'INSERT INTO relacion(curp_alumno, cve_tutor) VALUES (upper("'.$atr['curp_alumno'].'"), upper("'.$atr['cve_tutor'].'"))';
-			//$dataBase->triggerSimple($key,$sql);
-			print $sql;
+			$sql = 'INSERT INTO relacion(cve_relacion,curp_alumno, cve_tutor) VALUES (upper("'.$atr['cve_relacion'].'"), upper("'.$atr['curp_alumno'].'"),upper("'.$atr['cve_tutor'].'"))';
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
 		}
 
+		/*
 		public function modificar($key, $atr){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
@@ -51,6 +52,6 @@
 			//$dataBase->triggerSimple($key,$sql);
 			print $sql;
 		}
-
+		/**/
 	}
 ?>

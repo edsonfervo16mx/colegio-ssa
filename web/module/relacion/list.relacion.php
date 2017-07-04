@@ -34,7 +34,6 @@
 		<table id="example" class="mdl-data-table">
 			<thead>
 				<tr>
-					<td>#</td>
 					<td>Alumno</td>
 					<td>Tutor</td>
 					<td>Detalle</td>
@@ -42,15 +41,16 @@
 			</thead>
 			<tbody>
 				<?php
-					$i = 1;
 					foreach ($datosRelacion as $colRelacion) {
 						echo '<tr>';
-						echo '<td>'.$i.'</td>';
-						echo '<td>'.$colRelacion->curp_alumno.'</td>';
-						echo '<td>'.$colRelacion->cve_tutor.'</td>';
-						echo '<td></td>';
+						echo '<td>'.$colRelacion->nombre_completo_alumno.'</td>';
+						echo '<td>'.$colRelacion->nombre_completo_tutor.'</td>';
+						echo '<td>
+										<a href="relacion-ver.php?id='.$colRelacion->cve_relacion.'">
+											<i class="material-icons">visibility</i>
+										</a>
+									</td>';
 						echo '</tr>';
-						$i++;
 					}
 				?>
 			</tbody>
