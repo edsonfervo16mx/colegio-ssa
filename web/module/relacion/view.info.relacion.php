@@ -37,6 +37,6 @@
 	</div>
 	<div class="col m12">
 		<a href="relacion-lista.php" class="waves-effect waves-light btn"><i class="material-icons left">replay</i>Regresar</a>
-		<a href="relacion-modificar.php?id=<?php //echo $colAlumno->curp_alumno; ?>" class="waves-effect waves-light btn"><i class="material-icons left">delete</i>Eliminar Asignación</a>
+		<a href="procs/relacion.drop.php?id=<?php echo $colRelacion->cve_relacion; ?>" class="waves-effect waves-light btn"><i class="material-icons left">delete</i>Eliminar Asignación</a>
 	</div>
 </div>

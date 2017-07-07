@@ -11,7 +11,7 @@
 			<div class="row">
 				<div class="input-field col m6 s12">
 						<i class="material-icons prefix">perm_identity</i>
-						<input type="text" id="alumno" name="alumno" class="autocomplete" autofocus>
+						<input type="text" id="alumno" name="alumno" class="autocomplete" autofocus autocomplete="off">
 						<label for="alumno">Alumno</label>
 				</div>
 				<div class="input-field col m6 s12">

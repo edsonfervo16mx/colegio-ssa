@@ -44,14 +44,22 @@
 			//print $sql;
 		}
 
-		/*
+		/**/
 		public function modificar($key, $atr){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
-			$sql = 'UPDATE alumno SET curp_alumno = upper("'.$atr['curp_alumno'].'"), cve_tutor = upper("'.$atr['cve_tutor'].'") where cve_relacion = "'.$atr['id'].'"';
+			$sql = 'UPDATE relacion SET cve_relacion = upper("'.$atr['cve_relacion'].'"), curp_alumno = upper("'.$atr['curp_alumno'].'"), cve_tutor = upper("'.$atr['cve_tutor'].'") where cve_relacion = "'.$atr['id'].'"';
 			//$dataBase->triggerSimple($key,$sql);
 			print $sql;
 		}
 		/**/
+
+		public function eliminar($key, $atr){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'UPDATE relacion SET status_relacion = "inactive" where cve_relacion = "'.$atr['id'].'"';
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
+		}
 	}
 ?>

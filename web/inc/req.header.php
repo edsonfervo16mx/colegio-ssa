@@ -48,13 +48,27 @@
 					</li>
 					<li>
 						<a href="grupos.php" class="collapsible-header waves-effect waves-teal">
-							<i class="material-icons">view_quilt</i>Grupos
+							<i class="material-icons">view_quilt</i>Gestor de Grupos
 						</a>
 					</li>
 					<li>
-						<a href="#" class="collapsible-header waves-effect waves-teal">
-							<i class="material-icons">assignment</i>Listas de Grupo
+						<a class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">assignment</i>Listas
 						</a>
+						<div class="collapsible-body">
+							<ul>
+								<li>
+									<a href="constructor-lista.php">
+										<i class="material-icons">list</i>Listas de Grupo
+									</a>
+								</li>
+								<li>
+									<a href="constructor-registro.php">
+										<i class="material-icons">library_add</i>Agregar Alumno
+									</a>
+								</li>
+							</ul>
+						</div>
 					</li>
 					<li>
 						<a class="collapsible-header waves-effect waves-teal">
