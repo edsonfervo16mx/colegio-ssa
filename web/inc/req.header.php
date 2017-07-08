@@ -64,7 +64,7 @@
 								</li>
 								<li>
 									<a href="constructor-registro.php">
-										<i class="material-icons">library_add</i>Agregar Alumno
+										<i class="material-icons">library_add</i>Gestión Lista
 									</a>
 								</li>
 							</ul>

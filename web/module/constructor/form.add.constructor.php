@@ -34,6 +34,9 @@
 		</div>
 	</form>
 	<div class="col m12">
+		<h4 class="grey-text text-darken-1">Lista de Alumnos</h4>
+	</div>
+	<div class="col m12">
 		<table id="example" class="mdl-data-table">
 			<thead>
 				<tr>
@@ -50,7 +53,7 @@
 						echo '<td>'.$colConstructor->nombre_completo.'</td>';
 						echo '
 							<td>
-								<a href="#.php?curp='.$colConstructor->cve_constructor_grupo.'">
+								<a href="constructor-modificar.php?id='.$colConstructor->cve_constructor_grupo.'">
 									<i class="material-icons">visibility</i>
 								</a>
 							</td>';

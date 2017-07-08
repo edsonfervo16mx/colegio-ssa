@@ -1,6 +1,9 @@
 <?php 
 	$grupo = new Grupo;
 	$datosGrupo = $grupo->listar($key);
+
+	$constructor = new ConstructorGrupo;
+
 ?>
 <div class="row">
 	<div class="col m12">
@@ -11,9 +14,12 @@
 	<div class="collection">
 		<?php 
 			foreach ($datosGrupo as $colGrupo) {
+				$datosConstructor = $constructor->contarGrupo($key,$colGrupo->cve_grupo);
+				foreach ($datosConstructor as $colConstructor) {}
 				echo '
-					<a href="constructor-ver.php?id='.$colGrupo->cve_grupo.'" class="collection-item">'.$colGrupo->cve_grupo.' ('.$colGrupo->nombre_campus.')<span class="badge">1</span></a>
+					<a href="constructor-ver.php?id='.$colGrupo->cve_grupo.'" class="collection-item">'.$colGrupo->cve_grupo.' ('.$colGrupo->nombre_campus.')<span class="badge">'.$colConstructor->cantidad.'</span></a>
 				';
+				$colConstructor->cantidad = 0;
 			}
 		?>
 	</div>
