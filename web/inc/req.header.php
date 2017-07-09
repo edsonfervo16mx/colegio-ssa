@@ -76,9 +76,21 @@
 						</a>
 						<div class="collapsible-body">
 							<ul>
-								<li><a href="#">Precios</a></li>
-								<li><a href="#">Cuentas</a></li>
-								<li><a href="#">Abonos</a></li>
+								<li>
+									<a href="inscripcionprecio-lista.php">
+										<i class="material-icons">loyalty</i>Precios
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="material-icons">credit_card</i>Cuentas
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="material-icons">receipt</i>Abonos
+									</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -88,9 +100,21 @@
 						</a>
 						<div class="collapsible-body">
 							<ul>
-								<li><a href="#">Precios</a></li>
-								<li><a href="#">Cuentas</a></li>
-								<li><a href="#">Abonos</a></li>
+								<li>
+									<a href="#">
+										<i class="material-icons">loyalty</i>Precios
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="material-icons">credit_card</i>Cuentas
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="material-icons">receipt</i>Abonos
+									</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -100,9 +124,21 @@
 						</a>
 						<div class="collapsible-body">
 							<ul>
-								<li><a href="#">Precios</a></li>
-								<li><a href="#">Cuentas</a></li>
-								<li><a href="#">Abonos</a></li>
+								<li>
+									<a href="#">
+										<i class="material-icons">loyalty</i>Precios
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="material-icons">credit_card</i>Cuentas
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="material-icons">receipt</i>Abonos
+									</a>
+								</li>
 							</ul>
 						</div>
 					</li>
