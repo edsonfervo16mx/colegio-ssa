@@ -82,13 +82,8 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="inscripcioncuenta-panel.php">
 										<i class="material-icons">credit_card</i>Cuentas
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="material-icons">receipt</i>Abonos
 									</a>
 								</li>
 							</ul>
