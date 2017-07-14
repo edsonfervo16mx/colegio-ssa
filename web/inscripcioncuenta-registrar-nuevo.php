@@ -23,7 +23,7 @@
 			<main>
 			<div class="container area">
 				<?php
-					require_once 'module/inscripcioncuenta/form.add.inscripcioncuenta.php';
+					require_once 'module/inscripcioncuenta/form.add.inscripcioncuenta.new.php';
 				?>
 			</div>
 			</main>

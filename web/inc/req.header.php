@@ -77,13 +77,13 @@
 						<div class="collapsible-body">
 							<ul>
 								<li>
-									<a href="inscripcionprecio-lista.php">
-										<i class="material-icons">loyalty</i>Precios
+									<a href="inscripcioncuenta-panel.php">
+										<i class="material-icons">open_in_new</i>Caja
 									</a>
 								</li>
 								<li>
-									<a href="inscripcioncuenta-panel.php">
-										<i class="material-icons">credit_card</i>Cuentas
+									<a href="inscripcionprecio-lista.php">
+										<i class="material-icons">loyalty</i>Precios
 									</a>
 								</li>
 							</ul>

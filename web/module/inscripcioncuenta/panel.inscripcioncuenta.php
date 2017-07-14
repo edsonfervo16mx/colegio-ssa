@@ -1,69 +1,31 @@
 <div class="row">
 	<div class="col m12">
-		<h4 class="grey-text text-darken-1">Panel de Cobro de Inscripciones</h4>
+		<h4 class="grey-text text-darken-1">Inscripciones</h4>
 	</div>
 </div>
 <div class="row">
-	<div class="col m4 s12">
-		<div class="card grey darken-2">
-			<div class="card-content white-text">
-				<span class="card-title">Crear Cuenta</span>
+	<div class="col m6 s12">
+		<a href="inscripcioncuenta-registrar-nuevo.php">
+			<div class="card-panel teal">
+				<span class="white-text">
+					<h4 class="center-align">
+						Alumno Nuevo<br>
+						<i class="large material-icons">add</i>
+					</h4>
+				</span>
 			</div>
-			<div class="card-action">
-				<a href="inscripcioncuenta-registrar.php">Crear Cuenta</a>
-			</div>
-		</div>
+		</a>
 	</div>
-	<div class="col m4 s12">
-		<div class="card grey darken-2">
-			<div class="card-content white-text">
-				<span class="card-title">Abonos</span>
+	<div class="col m6 s12">
+		<a href="inscripcioncuenta-registrar-existente.php">
+			<div class="card-panel teal">
+				<span class="white-text">
+					<h4 class="center-align">
+						Alumno Existente<br>
+						<i class="large material-icons">perm_identity</i>
+					</h4>
+				</span>
 			</div>
-			<div class="card-action">
-				<a href="#">Cobrar</a>
-			</div>
-		</div>
-	</div>
-	<div class="col m4 s12">
-		<div class="card grey darken-2">
-			<div class="card-content white-text">
-				<span class="card-title">Cuentas</span>
-			</div>
-			<div class="card-action">
-				<a href="#">Ver Pagos</a>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="col m4 s12">
-		<div class="card grey darken-2">
-			<div class="card-content white-text">
-				<span class="card-title">Busqueda</span>
-			</div>
-			<div class="card-action">
-				<a href="#">Ver Pagos</a>
-			</div>
-		</div>
-	</div>
-	<div class="col m4 s12">
-		<div class="card grey darken-2">
-			<div class="card-content white-text">
-				<span class="card-title">Recibos</span>
-			</div>
-			<div class="card-action">
-				<a href="#">Ver Pagos</a>
-			</div>
-		</div>
-	</div>
-	<div class="col m4 s12">
-		<div class="card grey darken-2">
-			<div class="card-content white-text">
-				<span class="card-title">Reporte</span>
-			</div>
-			<div class="card-action">
-				<a href="#">Ver Pagos</a>
-			</div>
-		</div>
+		</a>
 	</div>
 </div>
