@@ -10,6 +10,9 @@
 
 	$precioinscripcion = new PrecioInscripcion;
 	$datosPrecioInscripcion = $precioinscripcion->listar($key);
+
+	$metodopago = new MetodoPago;
+	$datosMetodoPago = $metodopago->listar($key);
 ?>
 <div class="row">
 	<div class="col m12">
@@ -18,7 +21,7 @@
 </div>
 <div class="row">
 	<div class="col m12 s12">
-		<form action="" method="POST">
+		<form action="procs/cuentainscripcion.new.add.php" method="POST">
 			<div class="row">
 				<div class="col m12 s12">
 					<div class="card-panel grey lighten-5">
@@ -97,31 +100,49 @@
 							<div class="col m12 s12">
 								<h5>Cobro de Servicio</h5>
 							</div>
-							<div class="col m6 s12">
-								<div class="input-field col m12 s12">
-									<select name="">
-										<option value="" disabled selected>Choose your option</option>
-										<?php 
-											foreach ($datosPrecioInscripcion as $colPrecioInscripcion) {
-												echo '<option value="'.$colPrecioInscripcion->cve_precio_inscripcion.'">'.$colPrecioInscripcion->titulo_precio_inscripcion.'</option>';
-											}
-										?>
-									</select>
-									<label>Costo de Inscripción</label>
-								</div>
+							<div class="col m12 s12">
+								<!--<button onclick="loadMonto(20);">test</button>-->
 							</div>
 							<div class="col m6 s12">
 								<div class="input-field col m12 s12">
+									<label>Costo de Inscripción</label><br><br>
+									<select name="cve_precio_inscripcion" id="cve_precio_inscripcion" class="browser-default" onchange="loadMonto();">
+										<option value="" disabled selected>Choose your option</option>
+										<?php 
+											foreach ($datosPrecioInscripcion as $colPrecioInscripcion) {
+												echo '<option value="'.$colPrecioInscripcion->cve_precio_inscripcion.'">$ '.number_format($colPrecioInscripcion->monto_precio_inscripcion).' ('.$colPrecioInscripcion->titulo_precio_inscripcion.' )</option>';
+											}
+										?>
+									</select>
+								</div>
+								<div class="input-field col m12 s12">
+									<?php 
+										foreach ($datosPrecioInscripcion as $colPrecioInscripcion) {
+												echo '<input type="text" name="'.$colPrecioInscripcion->cve_precio_inscripcion.'" id="'.$colPrecioInscripcion->cve_precio_inscripcion.'" class="validate" value="'.$colPrecioInscripcion->monto_precio_inscripcion.'" hidden>';
+											}
+									?>
+								</div>
+								<div class="input-field col m12 s12">
+									<label>Metodo de Pago</label><br><br>
+									<?php 
+										foreach ($datosMetodoPago as $colMetodoPago) {
+											echo '<input name="sexo" type="radio" id="'.$colMetodoPago->cve_metodo_pago.'" value="'.$colMetodoPago->cve_metodo_pago.'" checked><label for="'.$colMetodoPago->cve_metodo_pago.'">'.$colMetodoPago->cve_metodo_pago.'</label>';
+										}
+									?>
+								</div>
+							</div>
+							<div class="col m6 s12">
+								<div class="col m12 s12">
 									<input type="text" name="monto" id="monto" class="validate">
 									<label for="monto">Monto Inscripción</label>
 								</div>
-								<div class="input-field col m12 s12">
-									<input type="text" name="monto" id="monto" class="validate">
-									<label for="monto">Abono</label>
+								<div class="col m12 s12">
+									<input type="text" name="abono" id="abono" class="validate">
+									<label for="abono">Abono</label>
 								</div>
-								<div class="input-field col m12 s12">
-									<input type="text" name="monto" id="monto" class="validate">
-									<label for="monto">Adeudo</label>
+								<div class="col m12 s12">
+									<input type="text" name="adeudo" id="adeudo" class="validate">
+									<label for="adeudo">Adeudo</label>
 								</div>
 							</div>
 							<div class="col m12 s12">

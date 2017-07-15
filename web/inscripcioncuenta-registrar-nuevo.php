@@ -24,6 +24,7 @@
 			<div class="container area">
 				<?php
 					require_once 'module/inscripcioncuenta/form.add.inscripcioncuenta.new.php';
+					require_once 'module/inscripcioncuenta/script.js.load.inputs.prices.php';
 				?>
 			</div>
 			</main>
