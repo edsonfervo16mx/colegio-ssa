@@ -24,9 +24,10 @@
 		public function registrar($key, $atr){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
-			$sql = 'INSERT INTO cuenta_inscripcion(folio_cuenta_inscripcion, fecha_cuenta_inscripcion,monto_cuenta_inscripcion,descripcion_cuenta_inscripcion,cve_precio_inscripcion,cve_constructor_grupo,cve_estado_pago) VALUES (upper("'.$atr['cve_grupo'].'"),upper("'.$atr['nombre_grupo'].'"),upper("'.$atr['cve_ciclo'].'"))';
-			//$dataBase->triggerSimple($key,$sql);
-			print $sql;
+			$sql = 'INSERT INTO cuenta_inscripcion(folio_cuenta_inscripcion, fecha_cuenta_inscripcion,monto_cuenta_inscripcion,cve_precio_inscripcion,cve_constructor_grupo,cve_estado_pago) VALUES (upper("'.$atr['folio_cuenta_inscripcion'].'"),upper("'.$atr['fecha_cuenta_inscripcion'].'"),upper("'.$atr['monto_cuenta_inscripcion'].'"),upper("'.$atr['cve_precio_inscripcion'].'"),upper("'.$atr['cve_constructor_grupo'].'"),upper("'.$atr['cve_estado_pago'].'"))';
+			$id_insert = $dataBase->triggerReturn($key,$sql);
+			return($id_insert);
+			//print $sql;
 		}
 
 		public function modificar($key, $atr){

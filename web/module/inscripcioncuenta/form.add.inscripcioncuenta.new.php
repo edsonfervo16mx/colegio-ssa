@@ -103,7 +103,7 @@
 							<div class="col m12 s12">
 								<!--<button onclick="loadMonto(20);">test</button>-->
 							</div>
-							<div class="col m6 s12">
+							<div class="col m8 s12">
 								<div class="input-field col m12 s12">
 									<label>Costo de Inscripción</label><br><br>
 									<select name="cve_precio_inscripcion" id="cve_precio_inscripcion" class="browser-default" onchange="loadMonto();">
@@ -126,29 +126,29 @@
 									<label>Metodo de Pago</label><br><br>
 									<?php 
 										foreach ($datosMetodoPago as $colMetodoPago) {
-											echo '<input name="sexo" type="radio" id="'.$colMetodoPago->cve_metodo_pago.'" value="'.$colMetodoPago->cve_metodo_pago.'" checked><label for="'.$colMetodoPago->cve_metodo_pago.'">'.$colMetodoPago->cve_metodo_pago.'</label>';
+											echo '<input name="metodo_pago" type="radio" id="'.$colMetodoPago->cve_metodo_pago.'" value="'.$colMetodoPago->cve_metodo_pago.'" checked><label for="'.$colMetodoPago->cve_metodo_pago.'">'.$colMetodoPago->cve_metodo_pago.'</label>';
 										}
 									?>
 								</div>
 							</div>
-							<div class="col m6 s12">
+							<div class="col m4 s12">
 								<div class="col m12 s12">
-									<input type="text" name="monto" id="monto" class="validate">
 									<label for="monto">Monto Inscripción</label>
+									<input type="text" name="monto" id="monto" class="validate" onkeyup="loadAdeudoUpdate();" autocomplete="false">
 								</div>
 								<div class="col m12 s12">
-									<input type="text" name="abono" id="abono" class="validate">
 									<label for="abono">Abono</label>
+									<input type="text" name="abono" id="abono" class="validate" onkeyup="loadAdeudo();">
 								</div>
 								<div class="col m12 s12">
-									<input type="text" name="adeudo" id="adeudo" class="validate">
 									<label for="adeudo">Adeudo</label>
+									<input type="text" name="adeudo" id="adeudo" class="validate" disabled>
 								</div>
 							</div>
 							<div class="col m12 s12">
 								<div class="input-field col m12 s12">
-									<textarea name="observaciones" id="observaciones" class="materialize-textarea" length="120"></textarea>
-									<label for="observaciones">Observaciones</label>
+									<textarea name="detalle" id="detalle" class="materialize-textarea" length="120"></textarea>
+									<label for="detalle">Observaciones</label>
 								</div>
 							</div>
 							<div class="col m12 s12 right-align">

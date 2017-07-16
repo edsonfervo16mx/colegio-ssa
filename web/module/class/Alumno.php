@@ -61,6 +61,14 @@
 			//print $sql;
 		}
 
+		public function registrarBase($key, $atr){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'INSERT INTO alumno(curp_alumno,nombre_alumno,apellidop_alumno,apellidom_alumno,nacimiento_alumno,cve_sexo,cve_campus) VALUES (upper("'.$atr['curp_alumno'].'"),upper("'.$atr['nombre_alumno'].'"),upper("'.$atr['apellidop_alumno'].'"),upper("'.$atr['apellidom_alumno'].'"),"'.$atr['nacimiento_alumno'].'","'.$atr['cve_sexo'].'","'.$atr['cve_campus'].'")';
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
+		}
+
 		public function modificar($key, $atr){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
