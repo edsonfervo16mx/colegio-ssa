@@ -28,4 +28,16 @@
 			</div>
 		</a>
 	</div>
+	<div class="col m12 s12">
+		<a href="inscripcioncuenta-lista.php">
+			<div class="card-panel teal">
+				<span class="white-text">
+					<h4 class="center-align">
+						Cuentas<br>
+						<i class="large material-icons">credit_card</i>
+					</h4>
+				</span>
+			</div>
+		</a>
+	</div>
 </div>

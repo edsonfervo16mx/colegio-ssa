@@ -1,10 +1,11 @@
 <?php 
+	/*
 	$utilidad = new Utilidad;
 	$sexo = new Sexo;
 	$datosSexo = $sexo->listar($key);
 	$campus = new Campus;
 	$datosCampus = $campus->listar($key);
-
+	/**/
 	$grupo = new Grupo;
 	$datosGrupo = $grupo->listar($key);
 
@@ -16,59 +17,22 @@
 ?>
 <div class="row">
 	<div class="col m12">
-		<h4 class="grey-text text-darken-1">Inscripción Alumno Nuevo</h4>
+		<h4 class="grey-text text-darken-1">Inscripción Alumno Existente</h4>
 	</div>
 </div>
 <div class="row">
 	<div class="col m12 s12">
-		<form action="procs/cuentainscripcion.new.add.php" method="POST">
+		<form action="procs/cuentainscripcion.exist.add.php" method="POST">
 			<div class="row">
 				<div class="col m12 s12">
 					<div class="card-panel grey lighten-5">
 						<div class="row">
 							<div class="col m12 s12">
-								<h5>Datos del Alumno</h5>
-								<div class="input-field col m6 s12">
-									<input type="text" name="curp" id="curp" placeholder="Ingrese la Curp" class="validate" autofocus>
-									<label for="curp">C.U.R.P</label>
-								</div>
-								<div class="input-field col m6 s12">
-									<input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre" class="validate" required>
-									<label for="nombre">Nombre alumno</label>
-								</div>
-								<div class="input-field col m6 s12">
-									<input type="text" name="apellido_paterno" id="apellido_paterno" placeholder="Ingrese el apellido paterno" class="validate" required>
-									<label for="apellido_paterno">Apellido Paterno</label>
-								</div>
-								<div class="input-field col m6 s12">
-									<input type="text" name="apellido_materno" id="apellido_materno" placeholder="Ingrese el apellido materno" class="validate" required>
-									<label for="apellido_materno">Apellido Materno</label>
-								</div>
-							</div>
-							<div class="col m12 s12">
-								<div class="col m12 s12">
-									<?php 
-										$utilidad->formNacimiento();
-									?>
-								</div>
-								<div class="col m6 s12">
-									<label>Sexo</label><br>
-									<?php 
-										foreach ($datosSexo as $colSexo) {
-											echo '<input name="sexo" type="radio" id="'.$colSexo->cve_sexo.'" value="'.$colSexo->cve_sexo.'" checked><label for="'.$colSexo->cve_sexo.'">'.$colSexo->cve_sexo.'</label>';
-										}
-									?>
-								</div>
-								<div class="input-field col m6 s12">
-									<select name="campus" id="campus">
-										<option value="" disabled selected>Elige una opción</option>
-										<?php 
-											foreach ($datosCampus as $colCampus) {
-												echo '<option value="'.$colCampus->cve_campus.'">'.$colCampus->nombre_campus.'</option>';
-											}
-										?>
-									</select>
-									<label>Campus</label>
+								<h5>Alumno</h5>
+								<div class="input-field col m9 s12">
+									<i class="material-icons prefix">perm_identity</i>
+									<input type="text" id="alumno" name="alumno" class="autocomplete" autofocus autocomplete="off">
+									<label for="alumno">Alumno</label>
 								</div>
 							</div>
 						</div>
