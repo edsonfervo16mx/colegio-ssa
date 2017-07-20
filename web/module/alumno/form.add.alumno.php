@@ -13,7 +13,7 @@
 		<div class="col m6 s12">
 			<div class="row">
 				<div class="input-field col m12 s12">
-					<input type="text" name="curp" id="curp" placeholder="Ingrese la Curp" class="validate" autofocus>
+					<input type="text" name="curp" id="curp" placeholder="Ingrese la Curp" class="validate" autofocus required>
 					<label for="curp">C.U.R.P</label>
 				</div>
 				<div class="input-field col m12 s12">

@@ -5,4 +5,5 @@
 <!-- -->
 <script src="../assets/dataTables/jquery.dataTables.min.js"></script>
 <script src="../assets/dataTables/dataTables.material.min.js"></script>
+<script src="../assets/js/abonos.js"></script>
 <!---->

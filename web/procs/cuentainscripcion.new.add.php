@@ -35,7 +35,7 @@
 		/**/
 
 		//folio cuenta
-		$foliocuenta = 'F-INSC/'.date('Y').'-';
+		$foliocuenta = 'F-INSC/'.date('y').'-';
 
 		//fecha cuenta
 		$fechacuenta = date('Y-m-d');
@@ -83,7 +83,7 @@
 		$abonoinscripcion = new AbonoInscripcion;
 		$abonoinscripcion->registrarNew($key, $id_cuenta, $atr);
 		//REDIRECCION
-		//print '<meta http-equiv="REFRESH" content="0; url=../alumno-lista.php">';
+		print '<meta http-equiv="REFRESH" content="0; url=../inscripcioncuenta-ver.php?id='.$id_cuenta.'">';
 	}else{
 		session_destroy();
 		//print '<meta http-equiv="REFRESH" content="0; url=../index.php">';

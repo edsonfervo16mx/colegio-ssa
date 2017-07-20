@@ -15,6 +15,17 @@
 	<div class="col m12">
 		<h4 class="grey-text text-darken-1">Cuenta Inscripción</h4>
 	</div>
+	<div class="col m12 right-align">
+		<a href="inscripcioncuenta-lista.php" class="waves-effect waves-light btn grey darken-1">
+			<i class="material-icons right">replay</i>Regresar
+		</a>
+		<a href="#" class="waves-effect waves-light btn light-blue darken-2">
+			<i class="material-icons right">description</i>Reporte
+		</a>
+		<a href="inscripcionabono-registro.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-green darken-1">
+			<i class="material-icons right">payment</i>Abonar
+		</a>
+	</div>
 	<div class="col m12">
 		<div class="card-panel grey lighten-4">
 			<span class="black-text">
@@ -50,5 +61,47 @@
 				<h3><?php echo $deuda; ?></h3>
 			</span>
 		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col m12">
+		<h5 class="grey-text text-darken-1">Abonos a cuenta inscripción</h5>
+	</div>
+	<div class="col m12">
+		<table id="" class="mdl-data-table striped">
+			<thead>
+				<tr>
+					<td>FOLIO</td>
+					<td>FECHA</td>
+					<td>DEPOSITO</td>
+					<td>DETALLE</td>
+					<td>METODO</td>
+					<td>ESTADO</td>
+					<td>CAJERO</td>
+					<td>OP</td>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					foreach ($datosAbonoInscripcion as $colAbonoInscripcion) {
+						echo '<tr>';
+						echo '<td>'.$colAbonoInscripcion->cve_abono_inscripcion.'</td>';
+						echo '<td>'.$colAbonoInscripcion->fecha_abono_inscripcion.'</td>';
+						echo '<td>'.$colAbonoInscripcion->deposito_abono_inscripcion.'</td>';
+						echo '<td>'.$colAbonoInscripcion->detalle_abono_inscripcion.'</td>';
+						echo '<td>'.$colAbonoInscripcion->cve_metodo_pago.'</td>';
+						echo '<td>'.$colAbonoInscripcion->cve_estado_pago.'</td>';
+						echo '<td>'.$colAbonoInscripcion->nombre_usuario.'</td>';
+						echo '
+							<td>
+								<a href="inscripcionabono-ver.php?id='.$colAbonoInscripcion->cve_abono_inscripcion.'">
+									<i class="material-icons">visibility</i>
+								</a>
+							</td>';
+						echo '</tr>';
+					}
+				?>
+			</tbody>
+		</table>
 	</div>
 </div>
