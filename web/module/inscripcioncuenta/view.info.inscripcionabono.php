@@ -11,18 +11,16 @@
 	foreach ($datosCuentaInscripcion as $colCuentaInscripcion) {}
 
 	$cantidades = $abonoinscripcion->listarDetalle($key, $colAbonoInscripcion->cve_cuenta_inscripcion);
-	$abonoAnterior = 0;
-	$abonoActual = 0;
+	$abono = 0;
 	foreach ($cantidades as $colCantidad) {
-		if($colCantidad->cve_abono_inscripcion != $_GET['id']){
-			$abonoAnterior = $abonoAnterior + $colCantidad->deposito_abono_inscripcion;
+		if($colCantidad->cve_abono_inscripcion < $_GET['id']){
+			$abono = $abono + $colCantidad->deposito_abono_inscripcion;
+			#echo 'Estoy en el if<br>';
+			echo $colCantidad->cve_abono_inscripcion.'||'.$colCantidad->fecha_abono_inscripcion.'||'.$colCantidad->deposito_abono_inscripcion.'<br>';
 		}
 	}
 	$descuento = $colAbonoInscripcion->monto_precio_inscripcion - $colAbonoInscripcion->monto_cuenta_inscripcion;
-	$deudaAnterior = $colAbonoInscripcion->monto_cuenta_inscripcion - $abonoAnterior;
-	$abonoActual = $abonoAnterior +  $colAbonoInscripcion->deposito_abono_inscripcion;
-	$deudaActual = $colAbonoInscripcion->monto_cuenta_inscripcion - $abonoActual;
-
+	$deuda = $colAbonoInscripcion->monto_cuenta_inscripcion - ($abono + $colAbonoInscripcion->deposito_abono_inscripcion);
 	/**/
 ?>
 <div class="row">
@@ -112,10 +110,8 @@
 							<strong>SUBTOTAL: </strong><br>
 							<strong>DESCUENTO: </strong><br>
 							<strong>TOTAL A PAGAR: </strong><br>
-							<strong>SUBTOTAL ABONO: </strong><br>
-							<strong>USTED DEBÍA: </strong><br>
+							<strong>ABONADO: </strong><br>
 							<strong>MONTO DE PAGO: </strong><br>
-							<strong>TOTAL ABONADO: </strong><br>
 							<strong>USTED ADEUDA: </strong><br>
 						</p>
 					</div>
@@ -124,11 +120,9 @@
 							<?php echo '$ '.number_format($colAbonoInscripcion->monto_precio_inscripcion); ?><br>
 							<?php echo '$ '.number_format($descuento); ?><br>
 							<?php echo '$ '.number_format($colAbonoInscripcion->monto_cuenta_inscripcion); ?><br>
-							<?php echo '$ '.number_format($abonoAnterior); ?><br>
-							<?php echo '$ '.number_format($deudaAnterior); ?><br>
+							<?php echo '$ '.number_format($abono); ?><br>
 							<?php echo '$ '.number_format($colAbonoInscripcion->deposito_abono_inscripcion); ?><br>
-							<?php echo '$ '.number_format($abonoActual); ?><br>
-							<?php echo '$ '.number_format($deudaActual); ?><br>
+							<?php echo '$ '.number_format($deuda); ?><br>
 						</p>
 					</div>
 				</div>
