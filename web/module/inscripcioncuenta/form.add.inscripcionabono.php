@@ -16,6 +16,8 @@
 	$metodopago = new MetodoPago;
 	$datosMetodoPago = $metodopago->listar($key);
 
+	
+
 ?>
 <div class="row">
 	<div class="col m12">

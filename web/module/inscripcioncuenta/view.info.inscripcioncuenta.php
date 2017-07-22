@@ -74,7 +74,6 @@
 					<td>FOLIO</td>
 					<td>FECHA</td>
 					<td>DEPOSITO</td>
-					<td>DETALLE</td>
 					<td>METODO</td>
 					<td>ESTADO</td>
 					<td>CAJERO</td>
@@ -88,7 +87,6 @@
 						echo '<td>'.$colAbonoInscripcion->cve_abono_inscripcion.'</td>';
 						echo '<td>'.$colAbonoInscripcion->fecha_abono_inscripcion.'</td>';
 						echo '<td>'.$colAbonoInscripcion->deposito_abono_inscripcion.'</td>';
-						echo '<td>'.$colAbonoInscripcion->detalle_abono_inscripcion.'</td>';
 						echo '<td>'.$colAbonoInscripcion->cve_metodo_pago.'</td>';
 						echo '<td>'.$colAbonoInscripcion->cve_estado_pago.'</td>';
 						echo '<td>'.$colAbonoInscripcion->nombre_usuario.'</td>';

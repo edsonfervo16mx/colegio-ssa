@@ -54,6 +54,14 @@
 			return ($data);
 		}
 
+		public function liquidar($key, $id){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'UPDATE cuenta_inscripcion SET cve_estado_pago = "PAGADO" where cve_cuenta_inscripcion = "'.$id.'"';
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
+		}
+
 		public function darBaja($key, $id){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
