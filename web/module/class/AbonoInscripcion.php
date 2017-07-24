@@ -87,6 +87,14 @@
 			$data = json_decode($data);
 			return ($data);
 		}
+
+		public function modificar($key, $atr){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'UPDATE abono_inscripcion SET fecha_abono_inscripcion = upper("'.$atr['fecha_abono_inscripcion'].'"),deposito_abono_inscripcion = upper("'.$atr['deposito_abono_inscripcion'].'"),detalle_abono_inscripcion = upper("'.$atr['detalle_abono_inscripcion'].'"),cve_metodo_pago = upper("'.$atr['cve_metodo_pago'].'"),nombre_usuario = upper("'.$atr['nombre_usuario'].'") where cve_abono_inscripcion = "'.$atr['cve_abono_inscripcion'].'"';
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
+		}
 	}
 
 ?>

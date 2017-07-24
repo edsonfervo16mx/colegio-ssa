@@ -16,7 +16,7 @@
 		if($colCantidad->cve_abono_inscripcion < $_GET['id']){
 			$abono = $abono + $colCantidad->deposito_abono_inscripcion;
 			#echo 'Estoy en el if<br>';
-			echo $colCantidad->cve_abono_inscripcion.'||'.$colCantidad->fecha_abono_inscripcion.'||'.$colCantidad->deposito_abono_inscripcion.'<br>';
+			#echo $colCantidad->cve_abono_inscripcion.'||'.$colCantidad->fecha_abono_inscripcion.'||'.$colCantidad->deposito_abono_inscripcion.'<br>';
 		}
 	}
 	$descuento = $colAbonoInscripcion->monto_precio_inscripcion - $colAbonoInscripcion->monto_cuenta_inscripcion;
@@ -128,5 +128,18 @@
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col m12 right-align">
+		<a href="inscripcioncuenta-ver.php?id=<?php echo $colAbonoInscripcion->cve_cuenta_inscripcion; ?>" class="waves-effect waves-light btn grey darken-1">
+			<i class="material-icons right">replay</i>Regresar
+		</a>
+		<a href="#" class="waves-effect waves-light btn light-blue darken-2">
+			<i class="material-icons right">receipt</i>Imprimir ticket
+		</a>
+		<a href="inscripcionabono-modificar.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-green darken-1">
+			<i class="material-icons right">payment</i>Modificar Abono
+		</a>
 	</div>
 </div>

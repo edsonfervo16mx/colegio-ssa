@@ -83,7 +83,7 @@
 								</li>
 								<li>
 									<a href="inscripcionprecio-lista.php">
-										<i class="material-icons">loyalty</i>Precios
+										<i class="material-icons">loyalty</i>Catalogo
 									</a>
 								</li>
 							</ul>
@@ -120,18 +120,13 @@
 						<div class="collapsible-body">
 							<ul>
 								<li>
-									<a href="#">
-										<i class="material-icons">loyalty</i>Precios
+									<a href="#.php">
+										<i class="material-icons">open_in_new</i>Caja
 									</a>
 								</li>
 								<li>
-									<a href="#">
-										<i class="material-icons">credit_card</i>Cuentas
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="material-icons">receipt</i>Abonos
+									<a href="#.php">
+										<i class="material-icons">loyalty</i>Catalogo
 									</a>
 								</li>
 							</ul>

@@ -57,7 +57,7 @@
 		<table id="example" class="mdl-data-table">
 			<thead>
 				<tr>
-					<td>Clave</td>
+					<!--<td>Clave</td>-->
 					<td>Ciclo</td>
 					<td>Titulo</td>
 					<td>Monto</td>
@@ -68,7 +68,7 @@
 				<?php 
 					foreach ($datosPrecioInscripcion as $colPrecioInscripcion) {
 						echo '<tr>';
-						echo '<td>'.substr($colPrecioInscripcion->cve_precio_inscripcion, 28).'</td>';
+						//echo '<td>'.substr($colPrecioInscripcion->cve_precio_inscripcion, 28).'</td>';
 						echo '<td>'.$colPrecioInscripcion->cve_ciclo.'</td>';
 						echo '<td>'.$colPrecioInscripcion->titulo_precio_inscripcion.'</td>';
 						echo '<td>'.$colPrecioInscripcion->monto_precio_inscripcion.'</td>';
