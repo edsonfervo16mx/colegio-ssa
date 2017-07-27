@@ -12,14 +12,14 @@
 		<table id="example" class="mdl-data-table">
 			<thead>
 				<tr>
-					<td>Folio</td>
-					<td>Fecha</td>
-					<td>Nombre</td>
-					<td>Monto</td>
-					<td>Abono</td>
-					<td>Adeudo</td>
-					<td>Estado</td>
-					<td>Detalle</td>
+					<th>Folio</th>
+					<th>Fecha</th>
+					<th>Nombre</th>
+					<th>Monto</th>
+					<th>Abono</th>
+					<th>Adeudo</th>
+					<th>Estado</th>
+					<th>Detalle</th>
 				</tr>
 			</thead>
 			<tbody>

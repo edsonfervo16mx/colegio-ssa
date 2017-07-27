@@ -47,11 +47,6 @@
 						</a>
 					</li>
 					<li>
-						<a href="grupos.php" class="collapsible-header waves-effect waves-teal">
-							<i class="material-icons">view_quilt</i>Gestor de Grupos
-						</a>
-					</li>
-					<li>
 						<a class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">assignment</i>Listas
 						</a>
@@ -65,6 +60,11 @@
 								<li>
 									<a href="constructor-registro.php">
 										<i class="material-icons">library_add</i>Gestión Lista
+									</a>
+								</li>
+								<li>
+									<a href="grupos.php" class="collapsible-header waves-effect waves-teal">
+										<i class="material-icons">view_quilt</i>Gestor de Grupos
 									</a>
 								</li>
 							</ul>
@@ -91,6 +91,25 @@
 					</li>
 					<li>
 						<a class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">view_carousel</i>Servicios
+						</a>
+						<div class="collapsible-body">
+							<ul>
+								<li>
+									<a href="serviciocuenta-panel.php">
+										<i class="material-icons">open_in_new</i>Caja
+									</a>
+								</li>
+								<li>
+									<a href="servicioprecio-lista.php">
+										<i class="material-icons">loyalty</i>Catalogo
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">recent_actors</i>Colegiaturas
 						</a>
 						<div class="collapsible-body">
@@ -108,25 +127,6 @@
 								<li>
 									<a href="#">
 										<i class="material-icons">receipt</i>Abonos
-									</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a class="collapsible-header waves-effect waves-teal">
-							<i class="material-icons">view_carousel</i>Servicios
-						</a>
-						<div class="collapsible-body">
-							<ul>
-								<li>
-									<a href="#.php">
-										<i class="material-icons">open_in_new</i>Caja
-									</a>
-								</li>
-								<li>
-									<a href="#.php">
-										<i class="material-icons">loyalty</i>Catalogo
 									</a>
 								</li>
 							</ul>

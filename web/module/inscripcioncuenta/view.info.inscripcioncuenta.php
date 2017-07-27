@@ -71,13 +71,13 @@
 		<table id="" class="mdl-data-table striped">
 			<thead>
 				<tr>
-					<td>FOLIO</td>
-					<td>FECHA</td>
-					<td>DEPOSITO</td>
-					<td>METODO</td>
-					<td>ESTADO</td>
-					<td>CAJERO</td>
-					<td>OP</td>
+					<th>FOLIO</th>
+					<th>FECHA</th>
+					<th>DEPOSITO</th>
+					<th>METODO</th>
+					<th>ESTADO</th>
+					<th>CAJERO</th>
+					<th>OP</th>
 				</tr>
 			</thead>
 			<tbody>
