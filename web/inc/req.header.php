@@ -115,18 +115,13 @@
 						<div class="collapsible-body">
 							<ul>
 								<li>
-									<a href="#">
-										<i class="material-icons">loyalty</i>Precios
+									<a href="colegiaturacuenta-panel.php">
+										<i class="material-icons">open_in_new</i>Caja
 									</a>
 								</li>
 								<li>
-									<a href="#">
-										<i class="material-icons">credit_card</i>Cuentas
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="material-icons">receipt</i>Abonos
+									<a href="colegiaturaprecio-lista.php">
+										<i class="material-icons">loyalty</i>Catalogo
 									</a>
 								</li>
 							</ul>
@@ -144,9 +139,23 @@
 						</div>
 					</li>
 					<li>
-						<a href="#" class="collapsible-header waves-effect waves-teal">
+						<a class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">call_received</i>Gastos
 						</a>
+						<div class="collapsible-body">
+							<ul>
+								<li>
+									<a href="gastos-registrar.php">
+										<i class="material-icons">add</i>Agregar Gasto
+									</a>
+								</li>
+								<li>
+									<a href="gastos-lista.php">
+										<i class="material-icons">view_list</i>Lista de Gastos
+									</a>
+								</li>
+							</ul>
+						</div>
 					</li>
 					<li>
 						<a href="estado-general.php" class="collapsible-header waves-effect waves-teal">

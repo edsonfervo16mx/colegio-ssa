@@ -10,11 +10,11 @@
 		<table id="example" class="mdl-data-table">
 			<thead>
 				<tr>
-					<td>#</td>
-					<td>Nombre</td>
-					<td>Correo</td>
-					<td>Telefono</td>
-					<td>Observaciones</td>
+					<th>#</th>
+					<th>Nombre</th>
+					<th>Correo</th>
+					<th>Telefono</th>
+					<th>Observaciones</th>
 				</tr>
 			</thead>
 			<tbody>

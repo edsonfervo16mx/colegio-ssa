@@ -72,16 +72,16 @@
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
 			$sql = 'INSERT INTO gastos(titulo_gasto,fecha_gasto,descripcion_gasto,monto_gasto,cve_metodo_pago,cve_ciclo) VALUES (upper("'.$atr['titulo_gasto'].'"),upper("'.$atr['fecha_gasto'].'"),upper("'.$atr['descripcion_gasto'].'"),upper("'.$atr['monto_gasto'].'"),upper("'.$atr['cve_metodo_pago'].'"),upper("'.$atr['cve_ciclo'].'"))';
-			//$dataBase->triggerSimple($key,$sql);
-			print $sql;
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
 		}
 
 		public function modificar($key,$atr){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
 			$sql = 'UPDATE gastos SET titulo_gasto = upper("'.$atr['titulo_gasto'].'"), fecha_gasto = upper("'.$atr['fecha_gasto'].'"), descripcion_gasto = upper("'.$atr['descripcion_gasto'].'"), monto_gasto = upper("'.$atr['monto_gasto'].'"), cve_metodo_pago = upper("'.$atr['cve_metodo_pago'].'"), cve_ciclo = upper("'.$atr['cve_ciclo'].'") where cve_gasto = "'.$atr['id'].'"';
-			//$dataBase->triggerSimple($key,$sql);
-			print $sql;
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
 		}
 	}
 ?>
