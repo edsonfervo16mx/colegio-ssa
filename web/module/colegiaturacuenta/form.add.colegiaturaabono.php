@@ -63,54 +63,55 @@
 							<h5 class="grey-text text-darken-1">Elegir mes</h5>
 						</div>
 						<div class="col m6 s12">
+						<input type="text" name="contador_meses" id="contador_meses" class="validate" value="0" hidden>
 							<p>
-								<input type="checkbox" id="AGOSTO" name="AGOSTO">
+								<input type="checkbox" id="AGOSTO" name="AGOSTO" onclick="agregarMes('AGOSTO');">
 								<label for="AGOSTO">AGOSTO</label>
 							</p>
 							<p>
-								<input type="checkbox" id="SEPTIEMBRE" name="SEPTIEMBRE">
+								<input type="checkbox" id="SEPTIEMBRE" name="SEPTIEMBRE" onclick="agregarMes('SEPTIEMBRE');">
 								<label for="SEPTIEMBRE">SEPTIEMBRE</label>
 							</p>
 							<p>
-								<input type="checkbox" id="OCTUBRE" name="OCTUBRE">
+								<input type="checkbox" id="OCTUBRE" name="OCTUBRE" onclick="agregarMes('OCTUBRE');">
 								<label for="OCTUBRE">OCTUBRE</label>
 							</p>
 							<p>
-								<input type="checkbox" id="NOVIEMBRE" name="NOVIEMBRE">
+								<input type="checkbox" id="NOVIEMBRE" name="NOVIEMBRE" onclick="agregarMes('NOVIEMBRE');">
 								<label for="NOVIEMBRE">NOVIEMBRE</label>
 							</p>
 							<p>
-								<input type="checkbox" id="DICIEMBRE" name="DICIEMBRE">
+								<input type="checkbox" id="DICIEMBRE" name="DICIEMBRE" onclick="agregarMes('DICIEMBRE');">
 								<label for="DICIEMBRE">DICIEMBRE</label>
 							</p>
 							<p>
-								<input type="checkbox" id="ENERO" name="ENERO">
+								<input type="checkbox" id="ENERO" name="ENERO" onclick="agregarMes('ENERO');">
 								<label for="ENERO">ENERO</label>
 							</p>
 						</div>
 						<div class="col m6 s12">
 							<p>
-								<input type="checkbox" id="FEBRERO" name="FEBRERO">
+								<input type="checkbox" id="FEBRERO" name="FEBRERO" onclick="agregarMes('FEBRERO');">
 								<label for="FEBRERO">FEBRERO</label>
 							</p>
 							<p>
-								<input type="checkbox" id="MARZO" name="MARZO">
+								<input type="checkbox" id="MARZO" name="MARZO" onclick="agregarMes('MARZO');">
 								<label for="MARZO">MARZO</label>
 							</p>
 							<p>
-								<input type="checkbox" id="ABRIL" name="ABRIL">
+								<input type="checkbox" id="ABRIL" name="ABRIL" onclick="agregarMes('ABRIL');">
 								<label for="ABRIL">ABRIL</label>
 							</p>
 							<p>
-								<input type="checkbox" id="MAYO" name="MAYO">
+								<input type="checkbox" id="MAYO" name="MAYO" onclick="agregarMes('MAYO');">
 								<label for="MAYO">MAYO</label>
 							</p>
 							<p>
-								<input type="checkbox" id="JUNIO" name="JUNIO">
+								<input type="checkbox" id="JUNIO" name="JUNIO" onclick="agregarMes('JUNIO');">
 								<label for="JUNIO">JUNIO</label>
 							</p>
 							<p>
-								<input type="checkbox" id="JULIO" name="JULIO">
+								<input type="checkbox" id="JULIO" name="JULIO" onclick="agregarMes('JULIO');">
 								<label for="JULIO">JULIO</label>
 							</p>
 						</div>
@@ -118,10 +119,12 @@
 					<div class="col m5 s12">
 						<div class="col m12 s12">
 							<input type="text" name="id" id="id" class="validate" value="<?php echo $_GET['id'] ?>" hidden>
+							<input type="text" name="precio_base" id="precio_base" class="validate" value="<?php echo $colCuentaColegiatura->monto_precio_colegiatura; ?>" hidden>
+							<input type="text" name="precio_interes" id="precio_interes" class="validate" value="<?php echo $saldo; ?>" hidden>
 						</div>
 						<div class="col m12 s12">
-							<input type="checkbox" id="test7" checked="checked"/>
-							<label for="test7">Aplica interes 10%</label>
+							<input type="checkbox" id="inter" checked="checked" onclick="actualizarSaldo();"/>
+							<label for="inter">Aplica interes 10%</label>
 						</div>
 						<div class="col m12 s12"><br>
 							<label for="saldopendiente">Monto a Pagar</label>
@@ -141,3 +144,36 @@
 		</div>
 	</div>
 </div>
+<!-- -->
+<script>
+	function actualizarSaldo(){
+		var status = document.getElementById('inter').checked;
+		var contador = parseInt(document.getElementById('contador_meses').value);
+		if(status == true){
+			document.getElementById('saldopendiente').value = document.getElementById('precio_interes').value * contador;
+		}else{
+			document.getElementById('saldopendiente').value = document.getElementById('precio_base').value * contador;
+		}
+	}
+
+	function agregarMes(mes){
+		var status = document.getElementById(mes).checked;
+		if(status == true){
+			var contador = parseInt(document.getElementById('contador_meses').value) + 1;
+			document.getElementById('contador_meses').value = contador;
+			console.log(contador);
+		}else{
+			var contador = parseInt(document.getElementById('contador_meses').value) - 1;
+			document.getElementById('contador_meses').value = contador;
+			console.log(contador);
+		}
+		
+		//
+		var status = document.getElementById('inter').checked;
+		if(status == true){
+			document.getElementById('saldopendiente').value = document.getElementById('precio_interes').value * contador;
+		}else{
+			document.getElementById('saldopendiente').value = document.getElementById('precio_base').value * contador;
+		}
+	}
+</script>
