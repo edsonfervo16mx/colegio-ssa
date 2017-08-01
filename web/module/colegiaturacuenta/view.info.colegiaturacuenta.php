@@ -106,14 +106,14 @@
 						echo '<tr>';
 						echo '<td>'.$colAbonoColegiatura->cve_abono_colegiatura.'</td>';
 						echo '<td>'.$colAbonoColegiatura->fecha_abono_colegiatura.'</td>';
-						echo '<td>'.$colAbonoColegiatura->deposito_abono_colegiatura.'</td>';
+						echo '<td>$ '.number_format($colAbonoColegiatura->deposito_abono_colegiatura).'</td>';
 						echo '<td>';
 								foreach ($datosMeses as $colMes) {
 									echo $colMes->cve_mes.'<br>';
 								}
 						echo '</td>';
 						echo '<td>'.$colAbonoColegiatura->cve_metodo_pago.'</td>';
-						echo '<td>'.$colAbonoColegiatura->cve_estado_pago.'</td>';
+						echo '<td>'.$colAbonoColegiatura->estado_pago_abono.'</td>';
 						echo '<td>'.$colAbonoColegiatura->nombre_usuario.'</td>';
 						echo '
 							<td>

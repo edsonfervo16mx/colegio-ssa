@@ -32,6 +32,10 @@
 	}
 
 	//VALIDACION DE INTERES
+
+	$metodopago = new MetodoPago;
+	$datosMetodoPago = $metodopago->listar($key);
+
 ?>
 <div class="row">
 	<div class="col m12">
@@ -123,7 +127,7 @@
 							<input type="text" name="precio_interes" id="precio_interes" class="validate" value="<?php echo $saldo; ?>" hidden>
 						</div>
 						<div class="col m12 s12">
-							<input type="checkbox" id="inter" checked="checked" onclick="actualizarSaldo();"/>
+							<input type="checkbox" name="inter" id="inter" checked="checked" onclick="actualizarSaldo();"/>
 							<label for="inter">Aplica interes 10%</label>
 						</div>
 						<div class="col m12 s12"><br>
@@ -132,12 +136,34 @@
 						</div>
 						<div class="col m12 s12">
 							<label for="deposito">Deposito</label>
-							<input type="text" name="deposito" id="deposito" class="validate" autofocus onkeyup="calculate()" autocomplete="off">
+							<input type="text" name="deposito" id="deposito" class="validate" autofocus onkeyup="calculate()" autocomplete="off" required>
 						</div>
 						<div class="col m12 s12">
 							<label for="adeudo">Adeudo</label>
 							<input type="text" name="adeudo" id="adeudo" class="validate" disabled>
 						</div>
+					</div>
+					<div class="col m12">
+						<div class="input-field col m6 s12">
+							<label>Metodo de Pago</label><br><br>
+							<?php 
+								foreach ($datosMetodoPago as $colMetodoPago) {
+									echo '<input name="metodo_pago" type="radio" id="'.$colMetodoPago->cve_metodo_pago.'" value="'.$colMetodoPago->cve_metodo_pago.'" checked><label for="'.$colMetodoPago->cve_metodo_pago.'">'.$colMetodoPago->cve_metodo_pago.'</label>';
+								}
+							?>
+						</div>
+						<div class="input-field col m6 s12">
+							<textarea id="detalle" name="detalle" class="materialize-textarea"></textarea>
+							<label for="detalle">Detalle del pago</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12 s12 right-align">
+						<a href="colegiaturacuenta-ver.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn">
+							<i class="material-icons left">replay</i>Regresar
+						</a>
+						<input type="submit" value="Abonar" class="waves-effect waves-light btn">
 					</div>
 				</div>
 			</form>

@@ -24,10 +24,10 @@
 			return ($data);
 		}
 
-		public function registrar($key, $id ,$atr){
+		public function registrar($key, $id ,$mes){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
-			$sql = 'INSERT INTO abono_colegiatura(cve_abono_colegiatura,cve_mes) VALUES (upper("'.$atr['cve_abono_colegiatura'].'"),upper("'.$atr['cve_mes'].'"))';
+			$sql = 'INSERT INTO rel_abono_mes(cve_abono_colegiatura,cve_mes) VALUES (upper("'.$id.'"),upper("'.$mes.'"))';
 			$dataBase->triggerSimple($key,$sql);
 			//print $sql;
 		}

@@ -88,5 +88,29 @@
 				echo '</select>';
 			echo '</div>';
 		}
+
+		public function listarMesesA(){
+			$listmeses = array(
+							1 => 'AGOSTO', 
+							2 => 'SEPTIEMBRE', 
+							3 => 'OCTUBRE', 
+							4 => 'NOVIEMBRE', 
+							5 => 'DICIEMBRE', 
+							6 => 'ENERO'
+						);
+			return($listmeses);
+		}
+
+		public function listarMesesB(){
+			$listmeses = array(
+							7 => 'FEBRERO', 
+							8 => 'MARZO', 
+							9 => 'ABRIL', 
+							10 => 'MAYO', 
+							11 => 'JUNIO', 
+							12 => 'JULIO'
+						);
+			return($listmeses);
+		}
 	}
 ?>

@@ -16,7 +16,6 @@
 					cuenta_colegiatura.cve_precio_colegiatura,
 					cuenta_colegiatura.cve_constructor_grupo,
 					cuenta_colegiatura.cve_estado_pago,
-					cuenta_colegiatura.cve_estado_pago,
 					precio_colegiatura.titulo_precio_colegiatura,
 					precio_colegiatura.monto_precio_colegiatura,
 					precio_colegiatura.meses_precio_colegiatura,
