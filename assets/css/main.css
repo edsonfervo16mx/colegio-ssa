@@ -33,6 +33,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @media only screen and (min-width: 993px) {
   .container {
-    width: 75% !important;
+    width: 80% !important;
   }
 }
+/*
+.visible{
+visibility: visible;
+}
+
+.no-visible{
+visibility: hidden;
+}
+/**/

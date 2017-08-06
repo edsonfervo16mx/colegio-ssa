@@ -133,8 +133,26 @@
 						</a>
 						<div class="collapsible-body">
 							<ul>
-								<li><a href="#">Inventario</a></li>
-								<li><a href="#">Ventas</a></li>
+								<li>
+									<a href="ventacuenta-registro.php">
+										<i class="material-icons">open_in_new</i>Caja
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="material-icons">payment</i>Cuenta Ventas
+									</a>
+								</li>
+								<li>
+									<a href="producto-lista.php">
+										<i class="material-icons">view_quilt</i>Productos
+									</a>
+								</li>
+								<li>
+									<a href="categoriaproductos-lista.php">
+										<i class="material-icons">view_list</i>Categoria Productos
+									</a>
+								</li>
 							</ul>
 						</div>
 					</li>
