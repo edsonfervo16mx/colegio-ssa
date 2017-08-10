@@ -53,9 +53,6 @@
 						<label for="detalle">Detalle del gasto</label>
 					</div>
 				</div>
-				<div class="col m12 s12 right-align">
-					<input type="submit" value="Registrar Gasto" class="waves-effect waves-light btn">
-				</div>
 			</div>
 		</form>
 	</div>

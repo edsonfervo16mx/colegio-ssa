@@ -1,4 +1,7 @@
 <?php
+	$campus = new Campus;
+	$datosCampus = $campus->listar($key);
+
 	$metodopago = new MetodoPago;
 	$datosMetodoPago = $metodopago->listar($key);
 
@@ -24,6 +27,14 @@
 										<label for="alumno">Alumno</label>
 									</div>
 									<div class="input-field col m12 s12">
+										<label>Caja</label><br><br>
+										<?php
+											foreach ($datosCampus as $colCampus) {
+												echo '<input name="caja_campus" type="radio" id="'.$colCampus->cve_campus.'" value="'.$colCampus->cve_campus.'" checked><label for="'.$colCampus->cve_campus.'">'.$colCampus->cve_campus.'</label>';
+											}
+										?>
+									</div>
+									<div class="input-field col m12 s12">
 										<label>Metodo de Pago</label><br><br>
 										<?php 
 											foreach ($datosMetodoPago as $colMetodoPago) {
@@ -31,13 +42,9 @@
 											}
 										?>
 									</div>
-									<div class="col m6 s12">
+									<div class="col m12 s12">
 										<br>
 										<h6 class="grey-text text-darken-1"><i class="material-icons">shopping_cart</i> Lista de compra </h6>
-									</div>
-									<div class="col m6 s12 right-align">
-										<br>
-										<a onclick="clean();"><h6 class=""><i class="material-icons">loop</i>Vaciar carrito</h6></a>
 									</div>
 									<div class="col m12 s12">
 										<table>
@@ -55,18 +62,57 @@
 											</tbody>
 										</table>
 									</div>
-									<div class="input-field col m6 s12 offset-m6" id="totalcompra">
-										<!-- -->
-										<input type="text" name="monto_venta" id="monto_venta" value="0" disabled>
-										<label for="monto_venta">Monto de Venta</label>
-										<!-- -->
-									</div>
 								</div>
 							</div>
 						</span>
 					</div>
+					<div class="row">
+						<div class="col s12 m12">
+							<div class="card-panel yellow lighten-4">
+								<span class="black-text">
+									<div class="row">
+										<div class="col m12 s12">
+											<div class="input-field col m4 s12" id="totalcompra">
+												<input type="text" name="monto_venta" id="monto_venta" value="0">
+												<label for="monto_venta">Monto de Venta</label>
+											</div>
+											<div class="input-field col m4 s12" id="totalcompra">
+												<input type="text" name="monto_pago" id="monto_pago" value="0">
+												<label for="monto_pago">Monto de Pago</label>
+											</div>
+											<div class="input-field col m4 s12" id="totalcompra">
+												<input type="text" name="monto_adeudo" id="monto_adeudo" value="0" disabled>
+												<label for="monto_adeudo">Adeudo</label>
+											</div>
+										</div>
+									</div>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col m12 s12">
+							<div class="card-panel grey lighten-5">
+								<span class="black-text">
+									<div class="row">
+										<div class="col m12 s12">
+											<div class="input-field col m12 s12">
+												<textarea id="detalle" name="detalle" class="materialize-textarea"></textarea>
+												<label for="detalle">Detalle de la venta</label>
+											</div>
+										</div>
+									</div>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col m12 s12 right-align">
+							<input type="submit" value="Vender" class="waves-effect waves-light btn">
+						</div>
+					</div>
 				</form>
-				<button onclick="imprimir();">Imprimir Carrito</button>
+				<!--<button onclick="imprimir();">Imprimir Carrito</button>-->
 			</div>
 			<div class="col m6 s12">
 				<table id="example" class="mdl-data-table">

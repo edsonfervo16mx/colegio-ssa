@@ -12,6 +12,7 @@
 			$sql = 'SELECT rel_ventas_producto.cve_rel_ventas_producto,
 					rel_ventas_producto.cve_cuenta_venta,
 					rel_ventas_producto.cve_producto,
+					rel_ventas_producto.cantidad_rel_ventas_producto,
 					productos.titulo_producto,
 					productos.detalle_producto,
 					productos.descripcion_producto,
@@ -42,9 +43,9 @@
 		public function registrar($key, $atr){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
-			$sql = 'INSERT INTO rel_ventas_producto(cve_producto,cve_cuenta_venta) VALUES (upper("'.$atr['cve_producto'].'"),upper("'.$atr['cve_cuenta_venta'].'"))';
-			//$dataBase->triggerSimple($key,$sql);
-			print $sql;
+			$sql = 'INSERT INTO rel_ventas_producto(cve_producto,cve_cuenta_venta,cantidad_rel_ventas_producto) VALUES (upper("'.$atr['cve_producto'].'"),upper("'.$atr['cve_cuenta_venta'].'"),upper("'.$atr['cantidad_rel_ventas_producto'].'"))';
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
 		}
 
 		public function darBaja($key, $id){

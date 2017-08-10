@@ -134,7 +134,7 @@
 		<a href="serviciocuenta-ver.php?id=<?php echo $colAbonoServicio->cve_cuenta_servicios; ?>" class="waves-effect waves-light btn grey darken-1">
 			<i class="material-icons right">replay</i>Regresar
 		</a>
-		<a href="#" class="waves-effect waves-light btn light-blue darken-2">
+		<a href="recibo-servicios.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-blue darken-2" target="_blank">
 			<i class="material-icons right">receipt</i>Imprimir ticket
 		</a>
 		<a href="servicioabono-modificar.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-green darken-1">

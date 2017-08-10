@@ -135,7 +135,7 @@
 		<a href="inscripcioncuenta-ver.php?id=<?php echo $colAbonoInscripcion->cve_cuenta_inscripcion; ?>" class="waves-effect waves-light btn grey darken-1">
 			<i class="material-icons right">replay</i>Regresar
 		</a>
-		<a href="#" class="waves-effect waves-light btn light-blue darken-2">
+		<a href="recibo-inscripcion.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-blue darken-2" target="_blank">
 			<i class="material-icons right">receipt</i>Imprimir ticket
 		</a>
 		<a href="inscripcionabono-modificar.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-green darken-1">

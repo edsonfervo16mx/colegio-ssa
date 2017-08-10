@@ -130,7 +130,7 @@
 		<a href="colegiaturacuenta-ver.php?id=<?php echo $colAbonoColegiatura->cve_cuenta_colegiatura; ?>" class="waves-effect waves-light btn grey darken-1">
 			<i class="material-icons right">replay</i>Regresar
 		</a>
-		<a href="#" class="waves-effect waves-light btn light-blue darken-2">
+		<a href="recibo-colegiatura.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-blue darken-2" target="_blank">
 			<i class="material-icons right">receipt</i>Imprimir ticket
 		</a>
 		<a href="colegiaturaabono-modificar.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-green darken-1">

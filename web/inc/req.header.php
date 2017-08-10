@@ -139,7 +139,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="ventacuenta-lista.php">
 										<i class="material-icons">payment</i>Cuenta Ventas
 									</a>
 								</li>
@@ -176,8 +176,8 @@
 						</div>
 					</li>
 					<li>
-						<a href="estado-general.php" class="collapsible-header waves-effect waves-teal">
-							<i class="material-icons">assessment</i>Estados
+						<a href="reportes-panel.php" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">assignment</i>Reporte Corte
 						</a>
 					</li>
 				</ul>
