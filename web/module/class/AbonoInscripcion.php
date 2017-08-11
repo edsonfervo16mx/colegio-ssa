@@ -95,6 +95,52 @@
 			$dataBase->triggerSimple($key,$sql);
 			//print $sql;
 		}
+
+
+
+		//---------------------------------------------
+		public function reporte($key, $campus ,$inicio, $final){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'SELECT abono_inscripcion.cve_abono_inscripcion,
+					abono_inscripcion.fecha_abono_inscripcion,
+					abono_inscripcion.deposito_abono_inscripcion,
+					abono_inscripcion.detalle_abono_inscripcion,
+					abono_inscripcion.cve_cuenta_inscripcion,
+					abono_inscripcion.cve_estado_pago,
+					abono_inscripcion.cve_metodo_pago,
+					abono_inscripcion.nombre_usuario,
+					precio_inscripcion.titulo_precio_inscripcion,
+					precio_inscripcion.detalle_precio_inscripcion,
+					precio_inscripcion.cve_ciclo,
+					campus.cve_campus,
+					cuenta_inscripcion.cve_cuenta_inscripcion,
+					cuenta_inscripcion.folio_cuenta_inscripcion,
+					cuenta_inscripcion.cve_constructor_grupo,
+					constructor_grupo.curp_alumno,
+					concat(alumno.apellidop_alumno," ",alumno.apellidom_alumno," ",alumno.nombre_alumno)as nombre_completo
+					from abono_inscripcion
+					inner join cuenta_inscripcion on (abono_inscripcion.cve_cuenta_inscripcion = cuenta_inscripcion.cve_cuenta_inscripcion)
+					inner join precio_inscripcion on (cuenta_inscripcion.cve_precio_inscripcion = precio_inscripcion.cve_precio_inscripcion)
+					inner join ciclo on (precio_inscripcion.cve_ciclo = ciclo.cve_ciclo)
+					inner join campus on (ciclo.cve_campus = campus.cve_campus)
+					inner join constructor_grupo on (cuenta_inscripcion.cve_constructor_grupo = constructor_grupo.cve_constructor_grupo)
+					inner join alumno on (constructor_grupo.curp_alumno = alumno.curp_alumno)
+					where abono_inscripcion.status_abono_inscripcion = "active" and campus.cve_campus = "'.$campus.'" and abono_inscripcion.fecha_abono_inscripcion between "'.$inicio.'" and "'.$final.'"';
+			#echo $sql;
+			$res = $dataBase->triggerSimple($key,$sql);
+			$i=0;
+			$line = null;
+			while ($row = mysqli_fetch_assoc($res)) {
+				$line[$i] = array_map('utf8_encode', $row) ;
+				$i++;
+			}
+			$data = json_encode($line);
+			$data = json_decode($data);
+			return ($data);
+		}
+
+
 	}
 
 ?>

@@ -72,18 +72,20 @@
 								<span class="black-text">
 									<div class="row">
 										<div class="col m12 s12">
-											<div class="input-field col m4 s12" id="totalcompra">
+											<div class="input-field col m6 s12" id="totalcompra">
 												<input type="text" name="monto_venta" id="monto_venta" value="0">
 												<label for="monto_venta">Monto de Venta</label>
 											</div>
-											<div class="input-field col m4 s12" id="totalcompra">
+											<div class="input-field col m6 s12" id="totalcompra">
 												<input type="text" name="monto_pago" id="monto_pago" value="0">
 												<label for="monto_pago">Monto de Pago</label>
 											</div>
+											<!-- 
 											<div class="input-field col m4 s12" id="totalcompra">
 												<input type="text" name="monto_adeudo" id="monto_adeudo" value="0" disabled>
 												<label for="monto_adeudo">Adeudo</label>
 											</div>
+											-->
 										</div>
 									</div>
 								</span>

@@ -83,6 +83,44 @@
 			print $sql;
 		}
 
+		//-------------------------------------------------
+		public function reporte($key, $campus ,$inicio, $final){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'SELECT abono_ventas.cve_abono_venta,
+					abono_ventas.fecha_abono_venta,
+					abono_ventas.deposito_abono_venta,
+					abono_ventas.detalle_abono_venta,
+					abono_ventas.cve_cuenta_venta,
+					abono_ventas.cve_estado_pago,
+					abono_ventas.cve_metodo_pago,
+					abono_ventas.nombre_usuario,
+					usuario.descripcion_usuario,
+					cuenta_ventas.cve_cuenta_venta,
+					cuenta_ventas.folio_cuenta_venta,
+					cuenta_ventas.nombre_cuenta_venta,
+					cuenta_ventas.fecha_cuenta_venta,
+					cuenta_ventas.monto_cuenta_venta,
+					cuenta_ventas.descripcion_cuenta_venta,
+					cuenta_ventas.cve_estado_pago,
+					cuenta_ventas.caja_campus
+					from abono_ventas
+					inner join cuenta_ventas on (abono_ventas.cve_cuenta_venta = cuenta_ventas.cve_cuenta_venta)
+					inner join usuario on (abono_ventas.nombre_usuario = usuario.nombre_usuario)
+					where abono_ventas.status_abono_venta = "active" and cuenta_ventas.caja_campus = "'.$campus.'" and abono_ventas.fecha_abono_venta between "'.$inicio.'" and "'.$final.'"';
+					#echo $sql;
+			$res = $dataBase->triggerSimple($key,$sql);
+			$i=0;
+			$line = null;
+			while ($row = mysqli_fetch_assoc($res)) {
+				$line[$i] = array_map('utf8_encode', $row) ;
+				$i++;
+			}
+			$data = json_encode($line);
+			$data = json_decode($data);
+			return ($data);
+		}
+
 	}
 
 ?>
