@@ -180,6 +180,11 @@
 							<i class="material-icons">assignment</i>Reporte Corte
 						</a>
 					</li>
+					<li>
+						<a href="salir.php" class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">launch</i>Cerrar Sesión
+						</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
