@@ -40,7 +40,7 @@
 
 		//CONSULTAR EL CONSTRUCTOR DEL ALUMNO
 		$constructor = new ConstructorGrupo;
-		$datosCostructor = $constructor->consultaCurp($key, $_POST['alumno']);
+		$datosCostructor = $constructor->consultaCurp($key, utf8_decode($_POST['alumno']));
 		foreach ($datosCostructor as $colConstructor) {}
 		//----------------
 

@@ -11,7 +11,7 @@
 		$fecha = date('Y-m-d');
 
 		$constructor = new ConstructorGrupo;
-		$datosConstructor = $constructor->consultaCurp($key, $_POST['alumno']);
+		$datosConstructor = $constructor->consultaCurp($key, utf8_decode($_POST['alumno']));
 		foreach ($datosConstructor as $colConstructor) {}
 
 		//--------------

@@ -93,7 +93,8 @@
 		public function consultaCurp($key,$nombre){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
-			$sql = 'SELECT alumno.curp_alumno from alumno inner join campus on (alumno.cve_campus = campus.cve_campus) where alumno.status_alumno = "active" and concat(alumno.apellidop_alumno," ",alumno.apellidom_alumno," ",alumno.nombre_alumno) = "'.$nombre.'" Limit 1';
+			$sql = 'SELECT alumno.curp_alumno from alumno inner join campus on (alumno.cve_campus = campus.cve_campus) where alumno.status_alumno = "active" and concat(alumno.apellidop_alumno," ",alumno.apellidom_alumno," ",alumno.nombre_alumno) = "'.$nombre.'"';
+			#echo $sql.'<br>';
 			$res = $dataBase->triggerSimple($key,$sql);
 			$i=0;
 			$line = null;

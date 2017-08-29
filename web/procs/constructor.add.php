@@ -6,9 +6,8 @@
 	//echo $_POST['cve_grupo'];
 
 	$alumno = new Alumno;
-	$datosAlumno = $alumno->consultaCurp($key, $_POST['alumno_constructor']);
+	$datosAlumno = $alumno->consultaCurp($key, utf8_decode($_POST['alumno_constructor']));
 	foreach ($datosAlumno as $colAlumno) {}
-
 
 	if (isset($_SESSION['status'])) {
 		//atributos

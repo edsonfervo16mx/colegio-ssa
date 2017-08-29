@@ -130,19 +130,39 @@
 					<tbody>
 						<?php
 							foreach ($datosProducto as $colProducto) {
-								echo '<tr>';
-								echo '<td>'.$colProducto->cve_categoria.'</td>';
-								echo '<td id='.$colProducto->titulo_producto."nombre".'>'.$colProducto->titulo_producto.'</td>';
-								echo '<td id='.$colProducto->existencia_producto."cantidad".'>'.$colProducto->existencia_producto.'</td>';
-								echo '<td id='.$colProducto->precio_producto."precio".'>$ '.$colProducto->precio_producto.'</td>';
-								echo '
-									<td>
-										<a href="#" onclick="addProducto('.$colProducto->cve_producto.',\''.$colProducto->titulo_producto.'\','.$colProducto->precio_producto.',1);">
-											<i class="material-icons">add</i>
-										</a>
-									</td>
-								';
-								echo '</tr>';
+								if ($_SESSION['usuario'] == 'secundariajp') {
+									if($colProducto->cve_campus == 'SEC' || $colProducto->cve_campus == 'BAC'){
+										echo '<tr>';
+										echo '<td>'.$colProducto->cve_categoria.'</td>';
+										echo '<td id='.$colProducto->titulo_producto."nombre".'>'.$colProducto->titulo_producto.'</td>';
+										echo '<td id='.$colProducto->existencia_producto."cantidad".'>'.$colProducto->existencia_producto.'</td>';
+										echo '<td id='.$colProducto->precio_producto."precio".'>$ '.$colProducto->precio_producto.'</td>';
+										echo '
+											<td>
+												<a href="#" onclick="addProducto('.$colProducto->cve_producto.',\''.$colProducto->titulo_producto.'\','.$colProducto->precio_producto.',1);">
+													<i class="material-icons">add</i>
+												</a>
+											</td>
+										';
+										echo '</tr>';
+									}
+								}else{
+									if($colProducto->cve_campus == 'PRI' || $colProducto->cve_campus == 'PRE'){
+										echo '<tr>';
+										echo '<td>'.$colProducto->cve_categoria.'</td>';
+										echo '<td id='.$colProducto->titulo_producto."nombre".'>'.$colProducto->titulo_producto.'</td>';
+										echo '<td id='.$colProducto->existencia_producto."cantidad".'>'.$colProducto->existencia_producto.'</td>';
+										echo '<td id='.$colProducto->precio_producto."precio".'>$ '.$colProducto->precio_producto.'</td>';
+										echo '
+											<td>
+												<a href="#" onclick="addProducto('.$colProducto->cve_producto.',\''.$colProducto->titulo_producto.'\','.$colProducto->precio_producto.',1);">
+													<i class="material-icons">add</i>
+												</a>
+											</td>
+										';
+										echo '</tr>';
+									}
+								}
 							}
 						?>
 					</tbody>

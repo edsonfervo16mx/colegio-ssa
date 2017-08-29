@@ -39,12 +39,12 @@
 		}
 
 		//CONSULTAR LA CURP DEL ALUMNO
+		/**/
 		$alumno = new Alumno;
-		$datosAlumno = $alumno->consultaCurp($key, $_POST['alumno']);
+		$datosAlumno = $alumno->consultaCurp($key, utf8_decode($_POST['alumno']));
 		foreach ($datosAlumno as $colAlumno) {}
 		$curp = $colAlumno->curp_alumno;
-
-
+		/**/
 		$atr = array(
 			'curp_alumno' => $curp,
 			'cve_grupo' => $_POST['cve_grupo'],
@@ -61,7 +61,7 @@
 			'nombre_usuario' => $_SESSION['usuario']
 		);
 		/**/
-		//print_r($atr);
+		#print_r($atr);
 		/**/
 		//REGISTRO DE CONSTRUCTOR DEL GRUPO
 		$constructorgrupo = new ConstructorGrupo;
