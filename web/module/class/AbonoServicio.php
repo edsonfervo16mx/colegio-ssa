@@ -101,6 +101,15 @@
 
 		//--------------------------------------------
 		public function reporte($key, $campus ,$inicio, $final){
+			//CAMPUS
+			if ($campus == 'SEC' || $campus == 'BAC') {
+				$ca1 = 'SEC';
+				$ca2 = 'BAC';
+			}else{
+				$ca1 = 'PRE';
+				$ca2 = 'PRI';
+			}
+			//
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
 			$sql = 'SELECT abono_servicios.cve_abono_servicios,
@@ -135,7 +144,7 @@
 					inner join campus on (ciclo.cve_campus = campus.cve_campus)
 					inner join constructor_grupo on (cuenta_servicios.cve_constructor_grupo = constructor_grupo.cve_constructor_grupo)
 					inner join alumno on (constructor_grupo.curp_alumno = alumno.curp_alumno)
-					where abono_servicios.status_abono_servicios = "active" and campus.cve_campus = "'.$campus.'" and abono_servicios.fecha_abono_servicios between "'.$inicio.'" and "'.$final.'"';
+					where abono_servicios.status_abono_servicios = "active" and (campus.cve_campus = "'.$ca1.'" or campus.cve_campus = "'.$ca2.'") and abono_servicios.fecha_abono_servicios between "'.$inicio.'" and "'.$final.'"';
 			$res = $dataBase->triggerSimple($key,$sql);
 			$i=0;
 			$line = null;

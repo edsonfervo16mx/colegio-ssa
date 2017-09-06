@@ -88,7 +88,7 @@
 	}
 
 	foreach ($reporteColegiatura as $colColegiatura) {
-		$total_colegiatura = $total_colegiatura + $colColegiatura->deposito_abono_colegiatura;
+		$total_colegiatura = $total_colegiatura + ($colColegiatura->deposito_abono_colegiatura + $colColegiatura->interes_abono_colegiatura);
 	}
 
 	foreach ($reporteVenta as $colVenta) {
@@ -104,7 +104,7 @@
 		<div class="card-panel center-align light-blue darken-1">
 			<span class="white-text">
 				<h5 class="center-align">Inscripciones</h5>
-				<?php echo '$ '.number_format($total_inscripcion); ?>
+				<?php echo '$ '.$total_inscripcion; ?>
 			</span>
 		</div>
 	</div>
@@ -112,7 +112,7 @@
 		<div class="card-panel center-align light-blue darken-3">
 			<span class="white-text">
 				<h5 class="center-align">Servicios</h5>
-				<?php echo '$ '.number_format($total_servicio); ?>
+				<?php echo '$ '.$total_servicio; ?>
 			</span>
 		</div>
 	</div>
@@ -120,7 +120,7 @@
 		<div class="card-panel center-align cyan darken-2">
 			<span class="white-text">
 				<h5 class="center-align">Colegiaturas</h5>
-				<?php echo '$ '.number_format($total_colegiatura); ?>
+				<?php echo '$ '.$total_colegiatura; ?>
 			</span>
 		</div>
 	</div>
@@ -128,7 +128,7 @@
 		<div class="card-panel center-align cyan darken-4">
 			<span class="white-text">
 				<h5 class="center-align">Ventas</h5>
-				<?php echo '$ '.number_format($total_venta); ?>
+				<?php echo '$ '.$total_venta; ?>
 			</span>
 		</div>
 	</div>
@@ -163,7 +163,7 @@
 							echo '<td><small>'.$colInscripcion->titulo_precio_inscripcion.'</small></td>';
 							echo '<td><small>'.$colInscripcion->nombre_completo.'</small></td>';
 							echo '<td><small>'.$colInscripcion->cve_metodo_pago.'</small></td>';
-							echo '<td class="right-align">$ '.number_format($colInscripcion->deposito_abono_inscripcion).'</td>';
+							echo '<td class="right-align">$ '.$colInscripcion->deposito_abono_inscripcion.'</td>';
 							echo '</tr>';
 						}
 						foreach ($reporteServicio as $colServicio) {
@@ -173,7 +173,7 @@
 							echo '<td><small>'.$colServicio->titulo_precio_servicios.'</small></td>';
 							echo '<td><small>'.$colServicio->nombre_completo.'</small></td>';
 							echo '<td><small>'.$colServicio->cve_metodo_pago.'</small></td>';
-							echo '<td class="right-align">$ '.number_format($colServicio->deposito_abono_servicios).'</td>';
+							echo '<td class="right-align">$ '.$colServicio->deposito_abono_servicios.'</td>';
 							echo '</tr>';
 						}
 						foreach ($reporteColegiatura as $colColegiatura) {
@@ -183,7 +183,7 @@
 							echo '<td><small>'.$colColegiatura->titulo_precio_colegiatura.'</small></td>';
 							echo '<td><small>'.$colColegiatura->nombre_completo.'</small></td>';
 							echo '<td><small>'.$colColegiatura->cve_metodo_pago.'</small></td>';
-							echo '<td class="right-align">$ '.number_format($colColegiatura->deposito_abono_colegiatura).'</td>';
+							echo '<td class="right-align">$ '.($colColegiatura->deposito_abono_colegiatura + $colColegiatura->interes_abono_colegiatura).'</td>';
 							echo '</tr>';
 						}
 						foreach ($reporteVenta as $colVenta) {
@@ -193,7 +193,7 @@
 							echo '<td><small>VENTA DE PRODUCTOS</small></td>';
 							echo '<td><small>'.$colVenta->nombre_cuenta_venta.'</small></td>';
 							echo '<td><small>'.$colVenta->cve_metodo_pago.'</small></td>';
-							echo '<td class="right-align">$ '.number_format($colVenta->deposito_abono_venta).'</td>';
+							echo '<td class="right-align">$ '.$colVenta->deposito_abono_venta.'</td>';
 							echo '</tr>';
 						}
 					?>

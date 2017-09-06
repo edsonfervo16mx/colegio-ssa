@@ -24,12 +24,11 @@
 	$datosMes = $mes->listar($key);
 
 	//VALIDACION DE INTERES
+	/**/
 	$dia = date('d');
-	if ($dia > 10) {
-		$saldo = ($colCuentaColegiatura->monto_precio_colegiatura * 1.10);
-	}else{
-		$saldo = $colCuentaColegiatura->monto_precio_colegiatura;
-	}
+	$saldointeres = ($colCuentaColegiatura->monto_precio_colegiatura * 1.10);
+	$saldo = $colCuentaColegiatura->monto_precio_colegiatura;
+	/**/
 
 	//VALIDACION DE INTERES
 
@@ -124,11 +123,22 @@
 						<div class="col m12 s12">
 							<input type="text" name="id" id="id" class="validate" value="<?php echo $_GET['id'] ?>" hidden>
 							<input type="text" name="precio_base" id="precio_base" class="validate" value="<?php echo $colCuentaColegiatura->monto_precio_colegiatura; ?>" hidden>
-							<input type="text" name="precio_interes" id="precio_interes" class="validate" value="<?php echo $saldo; ?>" hidden>
+							<input type="text" name="precio_interes" id="precio_interes" class="validate" value="<?php echo $saldointeres; ?>" hidden>
 						</div>
 						<div class="col m12 s12">
-							<input type="checkbox" name="inter" id="inter" checked="checked" onclick="actualizarSaldo();"/>
-							<label for="inter">Aplica interes 10%</label>
+							<?php
+								if ($dia > 10) {
+									echo '
+										<input type="checkbox" name="inter" id="inter" checked="checked" onclick="actualizarSaldo();"/>
+										<label for="inter">Aplica interes 10%</label>
+									';
+								}else{
+									echo '
+										<input type="checkbox" name="inter" id="inter" onclick="actualizarSaldo();"/>
+										<label for="inter">Aplica interes 10%</label>
+									';
+								}
+							?>
 						</div>
 						<div class="col m12 s12"><br>
 							<label for="saldopendiente">Monto a Pagar</label>

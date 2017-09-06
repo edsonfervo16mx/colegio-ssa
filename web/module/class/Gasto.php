@@ -83,5 +83,46 @@
 			$dataBase->triggerSimple($key,$sql);
 			//print $sql;
 		}
+
+		public function reporte($key, $campus ,$inicio, $final){
+			//CAMPUS
+			if ($campus == 'SEC' || $campus == 'BAC') {
+				$ca1 = 'SEC';
+				$ca2 = 'BAC';
+			}else{
+				$ca1 = 'PRE';
+				$ca2 = 'PRI';
+			}
+			//
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'SELECT gastos.cve_gasto,
+				gastos.titulo_gasto,
+				gastos.fecha_gasto,
+				gastos.descripcion_gasto,
+				gastos.monto_gasto,
+				gastos.cve_metodo_pago,
+				gastos.cve_ciclo,
+				ciclo.nombre_ciclo,
+				ciclo.cve_campus,
+				campus.nombre_campus,
+				campus.logo_campus,
+				colegio.nombre_colegio
+				from gastos
+				inner join ciclo on (gastos.cve_ciclo = ciclo.cve_ciclo)
+				inner join campus on (ciclo.cve_campus = campus.cve_campus)
+				inner join colegio on (campus.cve_colegio = colegio.cve_colegio)
+				where gastos.status_gasto = "active" and (ciclo.cve_campus ="'.$ca1.'" or ciclo.cve_campus ="'.$ca2.'") and gastos.fecha_gasto between "'.$inicio.'" and "'.$final.'"';
+			$res = $dataBase->triggerSimple($key,$sql);
+			$i=0;
+			$line = null;
+			while ($row = mysqli_fetch_assoc($res)) {
+				$line[$i] = array_map('utf8_encode', $row) ;
+				$i++;
+			}
+			$data = json_encode($line);
+			$data = json_decode($data);
+			return ($data);
+		}
 	}
 ?>

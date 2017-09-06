@@ -85,6 +85,15 @@
 
 		//-------------------------------------------------
 		public function reporte($key, $campus ,$inicio, $final){
+			//CAMPUS
+			if ($campus == 'SEC' || $campus == 'BAC') {
+				$ca1 = 'SEC';
+				$ca2 = 'BAC';
+			}else{
+				$ca1 = 'PRE';
+				$ca2 = 'PRI';
+			}
+			//
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
 			$sql = 'SELECT abono_ventas.cve_abono_venta,
@@ -107,7 +116,7 @@
 					from abono_ventas
 					inner join cuenta_ventas on (abono_ventas.cve_cuenta_venta = cuenta_ventas.cve_cuenta_venta)
 					inner join usuario on (abono_ventas.nombre_usuario = usuario.nombre_usuario)
-					where abono_ventas.status_abono_venta = "active" and cuenta_ventas.caja_campus = "'.$campus.'" and abono_ventas.fecha_abono_venta between "'.$inicio.'" and "'.$final.'"';
+					where abono_ventas.status_abono_venta = "active" and (cuenta_ventas.caja_campus = "'.$ca1.'" or cuenta_ventas.caja_campus = "'.$ca2.'") and abono_ventas.fecha_abono_venta between "'.$inicio.'" and "'.$final.'"';
 					#echo $sql;
 			$res = $dataBase->triggerSimple($key,$sql);
 			$i=0;
