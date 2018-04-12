@@ -130,6 +130,14 @@
 			return ($data);
 		}
 
+		public function eliminar($key, $folio){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'UPDATE abono_ventas SET status_abono_venta = "inactive" where cve_abono_venta = "'.$folio.'"';
+			$dataBase->triggerSimple($key,$sql);
+			#print $sql;
+		}
+
 	}
 
 ?>

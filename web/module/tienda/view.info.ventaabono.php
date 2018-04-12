@@ -131,5 +131,20 @@
 		<a href="ventaabono-modificar.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-green darken-1" disabled>
 			<i class="material-icons right">payment</i>Modificar Abono
 		</a>
+		<!-- -->
+		<?php 
+			if (date('Y-m-d')==$colAbonoVenta->fecha_abono_venta) {
+				echo '
+					<a href="procs/ventaabono.drop.php?folio='.$colAbonoVenta->cve_abono_venta.'&fecha_folio='.$colAbonoVenta->fecha_abono_venta.'&cuenta='.$colAbonoVenta->cve_cuenta_venta.'" class="waves-effect waves-light btn deep-orange darken-4">
+						<i class="material-icons right">close</i>Cancelar
+					</a>';
+			}else{
+				echo '
+					<button class="waves-effect waves-light btn deep-orange darken-4" disabled>
+						<i class="material-icons right">close</i>NO DISPONIBLE
+					</button>';
+			}
+		?>
+		<!-- -->
 	</div>
 </div>
