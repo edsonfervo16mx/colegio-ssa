@@ -61,7 +61,7 @@
 		<div class="card-panel light-blue darken-2">
 			<span class="white-text center-align">
 				Monto a Pagar
-				<h3><?php echo '$ '.number_format($colCuentaColegiatura->monto_cuenta_colegiatura); ?></h3>
+				<h3><?php echo '$ '.number_format($colCuentaColegiatura->monto_cuenta_colegiatura * $colCuentaColegiatura->beca_cuenta_colegiatura); ?></h3>
 			</span>
 		</div>
 	</div>

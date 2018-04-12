@@ -9,7 +9,7 @@
 
 		//VALIDACION DEL DEPOSITO A CUENTA
 		if ($_POST['inter']) {
-			$depositobase = $_POST['deposito'] / 1.1;
+			$depositobase = $_POST['deposito'] - ($_POST['deposito'] * .1);
 			$interes = $_POST['deposito'] - $depositobase;
 		}else{
 			$interes = 0;

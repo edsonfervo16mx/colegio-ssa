@@ -29,9 +29,18 @@
 								<option value="" disabled selected>Choose your option</option>
 								<?php 
 									foreach ($datosCampus as $colCampus) {
+										/*
 										if ($_POST['campus'] == $colCampus->cve_campus) {
 											echo '<option value="'.$colCampus->cve_campus.'" selected>'.$colCampus->nombre_campus.'</option>';
 										}else{
+											echo '<option value="'.$colCampus->cve_campus.'">'.$colCampus->nombre_campus.'</option>';
+										}
+										/**/
+										if ($_SESSION['usuario'] == 'secundariajp' && ($colCampus->cve_campus == 'SEC' || $colCampus->cve_campus == 'BAC')) {
+											echo '<option value="'.$colCampus->cve_campus.'" selected>'.$colCampus->nombre_campus.'</option>';
+										}
+
+										if ($_SESSION['usuario'] != 'secundariajp' && ($colCampus->cve_campus == 'PRI' || $colCampus->cve_campus == 'PRE')) {
 											echo '<option value="'.$colCampus->cve_campus.'">'.$colCampus->nombre_campus.'</option>';
 										}
 									}

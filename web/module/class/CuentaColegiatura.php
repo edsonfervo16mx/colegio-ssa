@@ -4,6 +4,51 @@
 			echo 'Ok';
 		}
 
+		//
+		public function listarView($key, $campus1, $campus2){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'SELECT cuenta_colegiatura.cve_cuenta_colegiatura,
+					cuenta_colegiatura.folio_cuenta_colegiatura,
+					cuenta_colegiatura.fecha_cuenta_colegiatura,
+					cuenta_colegiatura.monto_cuenta_colegiatura,
+					cuenta_colegiatura.beca_cuenta_colegiatura,
+					cuenta_colegiatura.descripcion_cuenta_colegiatura,
+					cuenta_colegiatura.cve_precio_colegiatura,
+					cuenta_colegiatura.cve_constructor_grupo,
+					cuenta_colegiatura.cve_estado_pago,
+					precio_colegiatura.titulo_precio_colegiatura,
+					precio_colegiatura.monto_precio_colegiatura,
+					precio_colegiatura.meses_precio_colegiatura,
+					precio_colegiatura.detalle_precio_colegiatura,
+					precio_colegiatura.cve_ciclo,
+					constructor_grupo.cve_grupo,
+					grupo.nombre_grupo,
+					grupo.cve_ciclo,
+					ciclo.cve_ciclo,
+					campus.cve_campus,
+					concat(alumno.apellidop_alumno," ",alumno.apellidom_alumno," ",alumno.nombre_alumno)as nombre_completo
+					from cuenta_colegiatura
+					inner join precio_colegiatura on (cuenta_colegiatura.cve_precio_colegiatura = precio_colegiatura.cve_precio_colegiatura)
+					inner join constructor_grupo on (cuenta_colegiatura.cve_constructor_grupo = constructor_grupo.cve_constructor_grupo)
+					inner join grupo on (constructor_grupo.cve_grupo = grupo.cve_grupo)
+					inner join alumno on (constructor_grupo.curp_alumno = alumno.curp_alumno)
+					inner join ciclo on (grupo.cve_ciclo = ciclo.cve_ciclo)
+					inner join campus on (ciclo.cve_campus = campus.cve_campus)
+					where cuenta_colegiatura.status_cuenta_colegiatura = "active" and (campus.cve_campus = "'.$campus1.'" or campus.cve_campus = "'.$campus2.'")
+					';
+			$res = $dataBase->triggerSimple($key,$sql);
+			$i=0;
+			$line = null;
+			while ($row = mysqli_fetch_assoc($res)) {
+				$line[$i] = array_map('utf8_encode', $row) ;
+				$i++;
+			}
+			$data = json_encode($line);
+			$data = json_decode($data);
+			return ($data);
+		}
+
 		public function listar($key){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
@@ -43,7 +88,6 @@
 			$data = json_decode($data);
 			return ($data);
 		}
-
 
 		public function ver($key, $id){
 			$dataBase = new dbMysql;

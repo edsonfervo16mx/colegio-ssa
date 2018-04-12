@@ -55,6 +55,8 @@
 						<select name="beca" id="beca">
 							<option value="1">Beca no aplica</option>
 							<option value=".5">Beca de 50%</option>
+							<option value=".7">Beca de 30%</option>
+							<option value=".75">Beca de 25%</option>
 						</select>
 						<label for="beca">Beca / Descuento</label>
 					</div>

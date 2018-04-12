@@ -48,12 +48,30 @@
 		$abonoventa->registrar($key, $abono);
 
 		$rel = new RelVentasProducto;
-
+		/**/
+		$producto = new Producto;
+		#echo "Prueba";
+		
+		/**/
+		#echo $_POST['ID0'];
+		//-------------------
 		for ($i=0; $i <=20 ; $i++) {
 			#echo $_POST['ID'.$i].'<br>';
 			if ($_POST['ID'.$i]) {
 				#echo '<br>-----------------------------------<br>';
 				#echo $_POST['ID'.$i].'|||'.$_POST['cantidadID'.$_POST['ID'.$i]];
+				//------------------------------------------------------
+				$datoProducto = $producto->ver($key, $_POST['ID'.$i]);
+				foreach ($datoProducto as $colProducto) {}
+				#echo $colProducto->cve_producto.'<br>'.$colProducto->existencia_producto;
+				$existencia_actual = $colProducto->existencia_producto - $_POST['cantidadID'.$_POST['ID'.$i]];
+				#cho $colProducto->existencia_producto.'<br>';
+				#echo $_POST['cantidadID'.$_POST['ID'.$i]].'<br>';
+				#echo $existencia_actual.'<br>';
+				#echo '***********************<br>';
+				$producto->modificarExistencia($key, $_POST['ID'.$i], $existencia_actual);
+				//------------------------------------------------------
+
 				$lista = array(
 							'cve_producto' => $_POST['ID'.$i],
 							'cve_cuenta_venta' => $id_cuenta,

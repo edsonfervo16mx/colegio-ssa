@@ -27,20 +27,39 @@
 			<tbody>
 				<?php 
 					foreach ($datosGasto as $colGasto) {
-						echo '<tr>';
-						echo '<td>'.$colGasto->fecha_gasto.'</td>';
-						echo '<td>'.$colGasto->titulo_gasto.'</td>';
-						echo '<td>'.$colGasto->descripcion_gasto.'</td>';
-						echo '<td>'.$colGasto->monto_gasto.'</td>';
-						echo '<td>'.$colGasto->cve_metodo_pago.'</td>';
-						echo '<td>'.$colGasto->nombre_campus.'</td>';
-						echo '
-							<td>
-								<a href="gasto-ver.php?id='.$colGasto->cve_gasto.'">
-									<i class="material-icons">visibility</i>
-								</a>
-							</td>';
-						echo '</tr>';
+						if ($_SESSION['usuario'] == 'secundariajp' && ($colGasto->cve_campus == 'SEC' || $colGasto->cve_campus == 'BAC')){
+							echo '<tr>';
+							echo '<td>'.$colGasto->fecha_gasto.'</td>';
+							echo '<td>'.$colGasto->titulo_gasto.'</td>';
+							echo '<td>'.$colGasto->descripcion_gasto.'</td>';
+							echo '<td>'.$colGasto->monto_gasto.'</td>';
+							echo '<td>'.$colGasto->cve_metodo_pago.'</td>';
+							echo '<td>'.$colGasto->nombre_campus.'</td>';
+							echo '
+								<td>
+									<a href="gasto-ver.php?id='.$colGasto->cve_gasto.'">
+										<i class="material-icons">visibility</i>
+									</a>
+								</td>';
+							echo '</tr>';
+						}
+						if ($_SESSION['usuario'] != 'secundariajp' && ($colGasto->cve_campus == 'PRI' || $colGasto->cve_campus == 'PRE')){
+							echo '<tr>';
+							echo '<td>'.$colGasto->fecha_gasto.'</td>';
+							echo '<td>'.$colGasto->titulo_gasto.'</td>';
+							echo '<td>'.$colGasto->descripcion_gasto.'</td>';
+							echo '<td>'.$colGasto->monto_gasto.'</td>';
+							echo '<td>'.$colGasto->cve_metodo_pago.'</td>';
+							echo '<td>'.$colGasto->nombre_campus.'</td>';
+							echo '
+								<td>
+									<a href="gasto-ver.php?id='.$colGasto->cve_gasto.'">
+										<i class="material-icons">visibility</i>
+									</a>
+								</td>';
+							echo '</tr>';
+						}
+						
 					}
 				?>
 			</tbody>

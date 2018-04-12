@@ -6,12 +6,18 @@
 	/**/
 	$key = array(
 		'host' => 'localhost',
-		'user' => 'personadb',
-		'pass' => 'qwerty123',
-		'db' => 'ssa_jeanpiaget' 
+		'user' => 'root',
+		'pass' => '',
+		'db' => 'respaldo_ssa_2018_03_22' 
 	);
 	/**/
 
-	
+	/*
+	$key = array(
+		'host' => 'localhost',
+		'user' => 'iclounde_admjp1',
+		'pass' => 'F3rnando16',
+		'db' => 'iclounde_colegio_jeanpiaget' 
+	);
 	/**/
 ?>

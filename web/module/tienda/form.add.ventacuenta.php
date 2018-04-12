@@ -30,7 +30,13 @@
 										<label>Caja</label><br><br>
 										<?php
 											foreach ($datosCampus as $colCampus) {
-												echo '<input name="caja_campus" type="radio" id="'.$colCampus->cve_campus.'" value="'.$colCampus->cve_campus.'" checked><label for="'.$colCampus->cve_campus.'">'.$colCampus->cve_campus.'</label>';
+												if ($_SESSION['usuario'] == 'secundariajp' && ($colCampus->cve_campus == 'SEC' || $colCampus->cve_campus == 'BAC')) {
+													echo '<input name="caja_campus" type="radio" id="'.$colCampus->cve_campus.'" value="'.$colCampus->cve_campus.'" checked><label for="'.$colCampus->cve_campus.'">'.$colCampus->cve_campus.'</label>';
+												}
+												if ($_SESSION['usuario'] != 'secundariajp' && ($colCampus->cve_campus == 'PRI' || $colCampus->cve_campus == 'PRE')) {
+													echo '<input name="caja_campus" type="radio" id="'.$colCampus->cve_campus.'" value="'.$colCampus->cve_campus.'" checked><label for="'.$colCampus->cve_campus.'">'.$colCampus->cve_campus.'</label>';
+												}
+												
 											}
 										?>
 									</div>

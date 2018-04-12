@@ -100,6 +100,14 @@
 
 		//falta la operacion de actualizar stock cuando se vende un producto
 
+		public function modificarExistencia($key, $id, $cantidad){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'UPDATE productos SET existencia_producto = "'.$cantidad.'" where cve_producto = "'.$id.'"';
+			$dataBase->triggerSimple($key,$sql);
+			#print $sql;
+		}
+
 	}
 
 ?>

@@ -26,7 +26,12 @@
 							<option value="" disabled selected>Elige una opción</option>
 							<?php 
 								foreach ($datosCiclo as $colCiclo) {
-									echo '<option value="'.$colCiclo->cve_ciclo.'">'.$colCiclo->nombre_ciclo.'</option>';
+									if ($_SESSION['usuario'] == 'secundariajp' && ($colCiclo->cve_campus == 'SEC' || $colCiclo->cve_campus == 'BAC')){
+										echo '<option value="'.$colCiclo->cve_ciclo.'">'.$colCiclo->nombre_ciclo.'</option>';
+									}
+									if ($_SESSION['usuario'] != 'secundariajp' && ($colCiclo->cve_campus == 'PRI' || $colCiclo->cve_campus == 'PRE')){
+										echo '<option value="'.$colCiclo->cve_ciclo.'">'.$colCiclo->nombre_ciclo.'</option>';
+									}
 								}
 							?>
 						</select>

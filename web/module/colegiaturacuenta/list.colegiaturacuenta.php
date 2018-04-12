@@ -1,9 +1,25 @@
 <?php
+	/**/
+	if($_SESSION['usuario'] == 'secundariajp'){
+			$campus1 = 'SEC';
+			$campus2 = 'BAC';
+		}
+
+	if($_SESSION['usuario'] != 'secundariajp'){
+			$campus1 = 'PRI';
+			$campus2 = 'PRE';
+		}
+	/**/
+
+
 
 	$cuentacole = new CuentaColegiatura;
-	$datosCuentaColegiatura = $cuentacole->listar($key);
+	//
+	$datosCuentaColegiatura = $cuentacole->listarView($key, $campus1, $campus2);
 
 	$abonocole = new AbonoColegiatura;
+	
+
 ?>
 <div class="row">
 	<div class="col m12">
@@ -40,7 +56,7 @@
 						echo '<td>'.$colCuentaColegiatura->folio_cuenta_colegiatura.$colCuentaColegiatura->cve_cuenta_colegiatura.'</td>';
 						echo '<td>'.$colCuentaColegiatura->fecha_cuenta_colegiatura.'</td>';
 						echo '<td>'.$colCuentaColegiatura->nombre_completo.'</td>';
-						echo '<td>'.$colCuentaColegiatura->monto_cuenta_colegiatura.'</td>';
+						echo '<td>'.$colCuentaColegiatura->monto_cuenta_colegiatura * $colCuentaColegiatura->beca_cuenta_colegiatura.'</td>';
 						echo '<td>'.$abono.'</td>';
 						echo '<td>'.$deuda.'</td>';
 						echo '<td>'.$colCuentaColegiatura->cve_estado_pago.'</td>';

@@ -259,7 +259,7 @@
 					inner join constructor_grupo on (cuenta_colegiatura.cve_constructor_grupo = constructor_grupo.cve_constructor_grupo)
 					inner join alumno on (constructor_grupo.curp_alumno = alumno.curp_alumno)
 					inner join usuario on (abono_colegiatura.nombre_usuario = usuario.nombre_usuario)
-					where abono_colegiatura.status_abono_colegiatura = "active" and (campus.cve_campus = "'.$ca1.'" or campus.cve_campus = "'.$ca2.'") and abono_colegiatura.fecha_abono_colegiatura  between "'.$inicio.'" and "'.$final.'"';
+					where abono_colegiatura.status_abono_colegiatura = "active" and (campus.cve_campus = "'.$ca1.'" or campus.cve_campus = "'.$ca2.'") and abono_colegiatura.fecha_abono_colegiatura  between "'.$inicio.'" and "'.$final.'" LIMIT 1';
 			$res = $dataBase->triggerSimple($key,$sql);
 			$i=0;
 			$line = null;

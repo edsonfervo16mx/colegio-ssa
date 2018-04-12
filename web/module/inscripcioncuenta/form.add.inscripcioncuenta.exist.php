@@ -48,7 +48,14 @@
 										<option value="" disabled selected>Choose your option</option>
 										<?php 
 											foreach ($datosGrupo as $colGrupo) {
-												echo '<option value="'.$colGrupo->cve_grupo.'">'.$colGrupo->nombre_grupo.' ('.$colGrupo->nombre_ciclo.')</option>';
+												/**/
+												if ($_SESSION['usuario'] == 'secundariajp' && ($colGrupo->cve_campus == 'SEC' || $colGrupo->cve_campus == 'BAC')){
+													echo '<option value="'.$colGrupo->cve_grupo.'">'.$colGrupo->nombre_grupo.' ('.$colGrupo->nombre_ciclo.')</option>';
+												}
+												if ($_SESSION['usuario'] != 'secundariajp' && ($colGrupo->cve_campus == 'PRI' || $colGrupo->cve_campus == 'PRE')){
+													echo '<option value="'.$colGrupo->cve_grupo.'">'.$colGrupo->nombre_grupo.' ('.$colGrupo->nombre_ciclo.')</option>';
+												}
+												/**/
 											}
 										?>
 									</select>

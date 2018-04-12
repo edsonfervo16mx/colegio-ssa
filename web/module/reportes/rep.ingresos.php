@@ -62,7 +62,7 @@
 			$ingreso_credito = $ingreso_credito + $colInscripcion->deposito_abono_inscripcion;
 		}
 		if ($colInscripcion->cve_metodo_pago == 'TARJETA DE DEBITO') {
-			$ingreso_deposito = $ingreso_deposito + $colInscripcion->deposito_abono_inscripcion;
+			$ingreso_debito = $ingreso_debito + $colInscripcion->deposito_abono_inscripcion;
 		}
 		if ($colInscripcion->cve_metodo_pago == 'TRANSFERENCIA') {
 			$ingreso_transferencia = $ingreso_transferencia + $colInscripcion->deposito_abono_inscripcion;
@@ -85,7 +85,7 @@
 			$ingreso_credito = $ingreso_credito + $colServicio->deposito_abono_servicios;
 		}
 		if ($colServicio->cve_metodo_pago == 'TARJETA DE DEBITO') {
-			$ingreso_deposito = $ingreso_deposito + $colServicio->deposito_abono_servicios;
+			$ingreso_debito = $ingreso_debito + $colServicio->deposito_abono_servicios;
 		}
 		if ($colServicio->cve_metodo_pago == 'TRANSFERENCIA') {
 			$ingreso_transferencia = $ingreso_transferencia + $colServicio->deposito_abono_servicios;
@@ -108,7 +108,7 @@
 			$ingreso_credito = $ingreso_credito + ($colColegiatura->deposito_abono_colegiatura + $colColegiatura->interes_abono_colegiatura);
 		}
 		if ($colColegiatura->cve_metodo_pago == 'TARJETA DE DEBITO') {
-			$ingreso_deposito = $ingreso_deposito + ($colColegiatura->deposito_abono_colegiatura + $colColegiatura->interes_abono_colegiatura);
+			$ingreso_debito = $ingreso_debito + ($colColegiatura->deposito_abono_colegiatura + $colColegiatura->interes_abono_colegiatura);
 		}
 		if ($colColegiatura->cve_metodo_pago == 'TRANSFERENCIA') {
 			$ingreso_transferencia = $ingreso_transferencia + ($colColegiatura->deposito_abono_colegiatura + $colColegiatura->interes_abono_colegiatura);
@@ -131,7 +131,7 @@
 			$ingreso_credito = $ingreso_credito + $colVenta->deposito_abono_venta;
 		}
 		if ($colVenta->cve_metodo_pago == 'TARJETA DE DEBITO') {
-			$ingreso_deposito = $ingreso_deposito + $colVenta->deposito_abono_venta;
+			$ingreso_debito = $ingreso_debito + $colVenta->deposito_abono_venta;
 		}
 		if ($colVenta->cve_metodo_pago == 'TRANSFERENCIA') {
 			$ingreso_transferencia = $ingreso_transferencia + $colVenta->deposito_abono_venta;
@@ -260,7 +260,7 @@ $html = '
 </table>
 <h3>Ingresos</h3>
 <table class="table table-hover">
-	<thead>
+	
 		<tr>
 			<th>FOLIO</th>
 			<th>FECHA</th>
@@ -268,9 +268,7 @@ $html = '
 			<th>NOMBRE COMPLETO</th>
 			<th>METODO PAGO</th>
 			<th>DEPOSITO</th>
-		</tr>
-	</thead>
-	<tbody>';
+		</tr>';
 		foreach ($reporteInscripcion as $colInscripcion) {
 			$html = $html.'	<tr>
 			<td><small>'.$colInscripcion->folio_cuenta_inscripcion.$colInscripcion->cve_cuenta_inscripcion.'/A-'.$colInscripcion->cve_abono_inscripcion.'</small></td>
@@ -324,11 +322,10 @@ $html = '
 			</tr>';
 		}
 	$html = $html.'	
-	</tbody>
 </table><br>
 <h3>Gastos</h3>
 <table class="table table-hover">
-	<thead>
+	
 		<tr>
 			<th>FOLIO</th>
 			<th>FECHA</th>
@@ -336,9 +333,7 @@ $html = '
 			<th>DESCRIPCION</th>
 			<th>METODO PAGO</th>
 			<th>MONTO</th>
-		</tr>
-	</thead>
-	<tbody>';
+		</tr>';
 		foreach ($datosGasto as $colGasto) {
 			$html = $html.'
 				<tr>
@@ -352,11 +347,10 @@ $html = '
 			';
 		}
 	$html = $html.'
-	</tbody>
 </table><br><br>
 <h3>Totales por concepto</h3>
 <table class="table table-hover">
-	<thead>
+	
 		<tr>
 			<th>INSCRIPCION</th>
 			<th>SERVICIOS</th>
@@ -364,8 +358,7 @@ $html = '
 			<th>VENTAS</th>
 			<th>GASTOS</th>
 		</tr>
-	</thead>
-	<tbody>
+	
 		<tr>
 			<td class="text-right">$ '.$total_inscripcion.'</td>
 			<td class="text-right">$ '.$total_servicio.'</td>
@@ -373,7 +366,6 @@ $html = '
 			<td class="text-right">$ '.$total_venta.'</td>
 			<td class="text-right">$ '.$total_gasto.'</td>
 		</tr>
-	</tbody>
 </table>
 <h3>Detalles</h3>
 <table>
@@ -444,6 +436,7 @@ $html = '
 $html=$html;
 #$html=$html;
 
+
 //Creamos la instancia
 $dompdf = new DOMPDF();
 
@@ -454,7 +447,6 @@ $dompdf->load_html($html);
 //oficio=job
 //horizontal = landscape
 //vertical = portrait
-
 $dompdf->set_paper('letter','portrait');
 //Hacemos la conversion de HTML a PDF
 $dompdf->render();
