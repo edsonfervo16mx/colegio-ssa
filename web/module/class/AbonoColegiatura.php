@@ -272,5 +272,13 @@
 			return ($data);
 		}
 
+		public function eliminar($key, $folio){
+			$dataBase = new dbMysql;
+			$dataBase->connectDB($key);
+			$sql = 'UPDATE abono_colegiatura SET status_abono_colegiatura = "inactive" where cve_abono_colegiatura = "'.$folio.'"';
+			$dataBase->triggerSimple($key,$sql);
+			//print $sql;
+		}
+
 	}
 ?>

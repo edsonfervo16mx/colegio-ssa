@@ -136,5 +136,20 @@
 		<a href="colegiaturaabono-modificar.php?id=<?php echo $_GET['id']; ?>" class="waves-effect waves-light btn light-green darken-1">
 			<i class="material-icons right">payment</i>Modificar Abono
 		</a>
+		<!-- -->
+		<?php 
+			if (date('Y-m-d')==$colAbonoColegiatura->fecha_abono_colegiatura) {
+				echo '
+					<a href="procs/abonocolegiatura.drop.php?folio='.$colAbonoColegiatura->cve_abono_colegiatura.'&fecha_folio='.$colAbonoColegiatura->fecha_abono_colegiatura.'&cuenta='.$colAbonoColegiatura->cve_cuenta_colegiatura.'" class="waves-effect waves-light btn deep-orange darken-4">
+						<i class="material-icons right">close</i>Cancelar
+					</a>';
+			}else{
+				echo '
+					<button class="waves-effect waves-light btn deep-orange darken-4" disabled>
+						<i class="material-icons right">close</i>NO DISPONIBLE
+					</button>';
+			}
+		?>
+		<!-- -->
 	</div>
 </div>
