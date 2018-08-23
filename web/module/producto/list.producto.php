@@ -29,9 +29,17 @@
 			</thead>
 			<tbody>
 				<?php 
+					if ($_SESSION['usuario'] == 'secundariajp') {
+						$cam1 = 'SEC';
+						$cam2 = 'BAC';
+					}else{
+						$cam1 = 'PRE';
+						$cam2 = 'PRI';
+					}
 					foreach ($datosProducto as $colProducto) {
-						echo '<tr>';
-						echo '<td>'.$colProducto->cve_producto.'</td>';
+						if ($colProducto->cve_campus == $cam1 || $colProducto->cve_campus == $cam2) {
+							echo '<tr>';
+						echo '<td>'.$colProducto->cve_campus.'/'.$colProducto->cve_producto.'</td>';
 						echo '<td>'.$colProducto->titulo_producto.'</td>';
 						echo '<td>'.$colProducto->detalle_producto.'</td>';
 						echo '<td>'.$colProducto->descripcion_producto.'</td>';
@@ -45,6 +53,7 @@
 								</a>
 							</td>';
 						echo '</tr>';
+						}
 					}
 				?>
 			</tbody>

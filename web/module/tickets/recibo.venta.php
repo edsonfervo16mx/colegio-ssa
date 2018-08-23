@@ -136,7 +136,7 @@ $html = '
 				    		$html = $html.'
 				    				<tr>
 				    					<td>'.$colRelProducto->cantidad_rel_ventas_producto.'</td>
-				    					<td class="">'.$colRelProducto->titulo_producto.'<br>'.$colRelProducto->cve_categoria.'</td>
+				    					<td class="">'.$colRelProducto->titulo_producto.'->'.$colRelProducto->cve_categoria.'</td>
 				    					<td class="text-right">$ '.number_format($colRelProducto->precio_producto).'</td>
 				    					<td class="text-right">$ '.number_format($colRelProducto->precio_producto * $colRelProducto->cantidad_rel_ventas_producto).'</td>
 				    				</tr>
@@ -237,7 +237,7 @@ $html = '
 					    		$html = $html.'
 					    				<tr>
 					    					<td>'.$colRelProducto->cantidad_rel_ventas_producto.'</td>
-					    					<td class="">'.$colRelProducto->titulo_producto.'<br>'.$colRelProducto->cve_categoria.'</td>
+					    					<td class="">'.$colRelProducto->titulo_producto.'->'.$colRelProducto->cve_categoria.'</td>
 					    					<td class="text-right">$ '.number_format($colRelProducto->precio_producto).'</td>
 					    					<td class="text-right">$ '.number_format($colRelProducto->precio_producto * $colRelProducto->cantidad_rel_ventas_producto).'</td>
 					    				</tr>
@@ -294,7 +294,7 @@ $html = '
 </table>
 ';
 
-
+#echo $html;
 #bloque generador----------------------------------------
 /**/
 $dompdf = new DOMPDF();

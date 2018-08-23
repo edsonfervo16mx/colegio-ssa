@@ -38,8 +38,21 @@
 							<option value="" disabled selected>Choose your option</option>
 							<?php
 								/**/
+								/**/
+								if($_SESSION['usuario'] == 'secundariajp'){
+										$campus1 = 'SECUNDARIA';
+										$campus2 = 'BACHILLER';
+									}
+
+								if($_SESSION['usuario'] != 'secundariajp'){
+										$campus1 = 'PRIMARIA';
+										$campus2 = 'PRE-ESCOLAR';
+									}
+								/**/
 								foreach ($datosPrecioColegiatura as $colPrecioColegiatura) {
-									echo '<option value="'.$colPrecioColegiatura->cve_precio_colegiatura.'">$ '.number_format($colPrecioColegiatura->monto_precio_colegiatura).' ('.$colPrecioColegiatura->titulo_precio_colegiatura.' )</option>';
+									if ($colPrecioColegiatura->nombre_campus == $campus1 || $colPrecioColegiatura->nombre_campus == $campus2) {
+										echo '<option value="'.$colPrecioColegiatura->cve_precio_colegiatura.'">$ '.number_format($colPrecioColegiatura->monto_precio_colegiatura).' ('.$colPrecioColegiatura->titulo_precio_colegiatura.' )'.'</option>';
+									}
 								}
 								/**/
 							?>
