@@ -181,6 +181,20 @@
 						</a>
 					</li>
 					<li>
+						<a class="collapsible-header waves-effect waves-teal">
+							<i class="material-icons">assignment_returned</i>Gestor de Reportes
+						</a>
+						<div class="collapsible-body">
+							<ul>
+								<li>
+									<a href="reportes-general.php">
+										<i class="material-icons">assessment</i>Reporte General
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
 						<a href="salir.php" class="collapsible-header waves-effect waves-teal">
 							<i class="material-icons">launch</i>Cerrar Sesión
 						</a>
