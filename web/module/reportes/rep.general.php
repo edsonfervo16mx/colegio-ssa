@@ -244,7 +244,7 @@
 					<td>
 						<strong>
 						<?php 
-							$servicios_total = $servicios_cheque + $servicios_deposito +$servicios_efectivo + $servicios_credito + $servicios_efectivo + $servicios_debito;
+							$servicios_total = $servicios_cheque + $servicios_deposito +$servicios_efectivo + $servicios_credito + $servicios_debito + $servicios_transferencia;
 							echo number_format($servicios_total);
 						?>
 						</strong>
