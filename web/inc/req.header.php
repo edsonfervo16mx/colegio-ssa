@@ -191,6 +191,11 @@
 										<i class="material-icons">assessment</i>Reporte General
 									</a>
 								</li>
+								<li>
+									<a href="reportes-servicios.php">
+										<i class="material-icons">assessment</i>Conceptos Servicios
+									</a>
+								</li>
 							</ul>
 						</div>
 					</li>
