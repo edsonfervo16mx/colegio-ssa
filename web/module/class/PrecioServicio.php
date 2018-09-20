@@ -12,8 +12,12 @@
 					precio_servicios.titulo_precio_servicios,
 					precio_servicios.monto_precio_servicios,
 					precio_servicios.detalle_precio_servicios,
-					precio_servicios.cve_ciclo
-					from precio_servicios where precio_servicios.status_precio_servicios = "active"';
+					precio_servicios.cve_ciclo,
+					campus.cve_campus
+					from precio_servicios 
+					inner join ciclo on (precio_servicios.cve_ciclo = ciclo.cve_ciclo)
+					inner join campus on (ciclo.cve_campus = campus.cve_campus)
+					where precio_servicios.status_precio_servicios = "active"';
 			$res = $dataBase->triggerSimple($key,$sql);
 			$i=0;
 			$line = null;

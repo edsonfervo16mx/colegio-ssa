@@ -36,13 +36,19 @@
 							</div>
 							<div class="col m8 s12">
 								<h5>Servicio</h5>
-								<label>Costo de Inscripción</label><br><br>
+								<label>Costo de Servicio</label><br><br>
 								<select name="cve_precio_servicios" id="cve_precio_servicios" class="browser-default" onchange="loadMonto();">
 									<option value="" disabled selected>Choose your option</option>
 									<?php 
 										/**/
 										foreach ($datosPrecioServicio as $colPrecioServicio) {
-											echo '<option value="'.$colPrecioServicio->cve_precio_servicios.'">$ '.number_format($colPrecioServicio->monto_precio_servicios).' ('.$colPrecioServicio->titulo_precio_servicios.' )</option>';
+											if ($_SESSION['usuario'] == 'secundariajp' && ($colPrecioServicio->cve_campus == 'SEC' || $colPrecioServicio->cve_campus == 'BAC')){
+												echo '<option value="'.$colPrecioServicio->cve_precio_servicios.'">$ '.number_format($colPrecioServicio->monto_precio_servicios).' ('.$colPrecioServicio->titulo_precio_servicios.' )</option>';
+											}
+											if ($_SESSION['usuario'] != 'secundariajp' && ($colPrecioServicio->cve_campus == 'PRI' || $colPrecioServicio->cve_campus == 'PRE')){
+												echo '<option value="'.$colPrecioServicio->cve_precio_servicios.'">$ '.number_format($colPrecioServicio->monto_precio_servicios).' ('.$colPrecioServicio->titulo_precio_servicios.' )</option>';
+											}
+											
 										}
 										/**/
 									?>
