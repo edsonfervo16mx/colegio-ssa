@@ -56,7 +56,7 @@
 					</div>
 					<div class="col m12 s12">
 						<div class="col m6">
-							<label>Costo de Inscripción</label>
+							<label>Concepto por servicio</label>
 							<select name="cve_precio_servicios" id="cve_precio_servicios">
 								<option value="" disabled selected>Choose your option</option>
 								<?php 

@@ -36,7 +36,7 @@
 							</div>
 							<div class="col m8 s12">
 								<h5>Servicio</h5>
-								<label>Costo de Servicio</label><br><br>
+								<label>Costo de Inscripción</label><br><br>
 								<select name="cve_precio_servicios" id="cve_precio_servicios" class="browser-default" onchange="loadMonto();">
 									<option value="" disabled selected>Choose your option</option>
 									<?php 

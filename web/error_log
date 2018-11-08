@@ -1,0 +1,2 @@
+[25-Jan-2018 12:03:05 Mexico/General] PHP Fatal error:  Call to undefined method DOMText::getAttribute() in /home/iclounde/public_html/clientes/colegiojeanpiaget/assets/dompdf/include/cellmap.cls.php on line 437
+[25-Jan-2018 12:03:21 Mexico/General] PHP Fatal error:  Call to undefined method DOMText::getAttribute() in /home/iclounde/public_html/clientes/colegiojeanpiaget/assets/dompdf/include/cellmap.cls.php on line 437

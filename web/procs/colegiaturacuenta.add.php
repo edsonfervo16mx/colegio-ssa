@@ -27,8 +27,7 @@
 			'cve_estado_pago' => 'ADEUDO'
 		);
 		#print_r($atr);
-		#echo $colConstructor->cve_constructor_grupo;
-
+		
 		$cuentacole = new CuentaColegiatura;
 		$id_cuenta = $cuentacole->registrar($key, $atr);
 

@@ -120,14 +120,11 @@ $html = $html = '
 	</tr>
 </table>
 <table class="table table-hover">
-    <thead>
         <tr>
             <th>CANTIDAD</th>
             <th>CONCEPTO</th>
             <th>COSTO</th>
         </tr>
-    </thead>
-    <tbody>
         <tr>
             <td>1</td>
             <td>
@@ -144,7 +141,6 @@ $html = $html = '
             	$ '.number_format($colAbonoColegiatura->monto_precio_colegiatura).'
             </td>
         </tr>
-    </tbody>
 </table>
 <table class="table">
 	<tr>

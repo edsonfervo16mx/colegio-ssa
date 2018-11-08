@@ -4,7 +4,6 @@
 			echo 'Ok';
 		}
 
-		//
 		public function listarView($key, $campus1, $campus2){
 			$dataBase = new dbMysql;
 			$dataBase->connectDB($key);
@@ -88,6 +87,7 @@
 			$data = json_decode($data);
 			return ($data);
 		}
+
 
 		public function ver($key, $id){
 			$dataBase = new dbMysql;

@@ -82,8 +82,7 @@
 								<div class="input-field col m12 s12">
 									<select name="cve_grupo">
 										<option value="" disabled selected>Choose your option</option>
-										<?php
-											//$colGrupo->cve_campus
+										<?php 
 											foreach ($datosGrupo as $colGrupo) {
 												/**/
 												if ($_SESSION['usuario'] == 'secundariajp' && ($colGrupo->cve_campus == 'SEC' || $colGrupo->cve_campus == 'BAC')){

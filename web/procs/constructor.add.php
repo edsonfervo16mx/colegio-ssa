@@ -9,6 +9,7 @@
 	$datosAlumno = $alumno->consultaCurp($key, utf8_decode($_POST['alumno_constructor']));
 	foreach ($datosAlumno as $colAlumno) {}
 
+
 	if (isset($_SESSION['status'])) {
 		//atributos
 		$atr = array(

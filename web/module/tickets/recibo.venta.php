@@ -85,7 +85,7 @@ $html = '
 	}
 </style>
 <table>
-	<thead>
+	
 		<tr>
 			<td>
 				<table>
@@ -122,21 +122,19 @@ $html = '
 					</tr>
 				</table>
 				<table class="table table-hover">
-				    <thead>
+				    
 				       <tr>
 				            <th>CANTIDAD</th>
 				            <th>CONCEPTO</th>
 				            <th>PRECIO</th>
 				            <th>IMPORTE</th>
-				        </tr>
-				    </thead>
-				    <tbody>';
+				        </tr>';
 
 				    	foreach ($datosRelProducto as $colRelProducto) {
 				    		$html = $html.'
 				    				<tr>
 				    					<td>'.$colRelProducto->cantidad_rel_ventas_producto.'</td>
-				    					<td class="">'.$colRelProducto->titulo_producto.'->'.$colRelProducto->cve_categoria.'</td>
+				    					<td class="">'.$colRelProducto->titulo_producto.'-->'.$colRelProducto->cve_categoria.'</td>
 				    					<td class="text-right">$ '.number_format($colRelProducto->precio_producto).'</td>
 				    					<td class="text-right">$ '.number_format($colRelProducto->precio_producto * $colRelProducto->cantidad_rel_ventas_producto).'</td>
 				    				</tr>
@@ -144,7 +142,6 @@ $html = '
 						}
 
 				    $html = $html.'
-				    </tbody>
 				</table>
 				<table class="table">
 					<tr>
@@ -224,27 +221,26 @@ $html = '
 					</tr>
 				</table>
 				<table class="table table-hover">
-				    <thead>
+				    
 				       <tr>
 				            <th>CANTIDAD</th>
 				            <th>CONCEPTO</th>
 				            <th>PRECIO</th>
 				            <th>IMPORTE</th>
 				        </tr>
-				    </thead>
-				    <tbody>';
+				    ';
 						    foreach ($datosRelProducto as $colRelProducto) {
 					    		$html = $html.'
 					    				<tr>
 					    					<td>'.$colRelProducto->cantidad_rel_ventas_producto.'</td>
-					    					<td class="">'.$colRelProducto->titulo_producto.'->'.$colRelProducto->cve_categoria.'</td>
+					    					<td class="">'.$colRelProducto->titulo_producto.'-->'.$colRelProducto->cve_categoria.'</td>
 					    					<td class="text-right">$ '.number_format($colRelProducto->precio_producto).'</td>
 					    					<td class="text-right">$ '.number_format($colRelProducto->precio_producto * $colRelProducto->cantidad_rel_ventas_producto).'</td>
 					    				</tr>
 					    				';
 							}
 				    $html = $html.'
-				    </tbody>
+				    
 				</table>
 				<table class="table">
 					<tr>
@@ -290,11 +286,11 @@ $html = '
 				</table>
 			</td>
 		</tr>
-	</thead>
+	
 </table>
 ';
 
-#echo $html;
+
 #bloque generador----------------------------------------
 /**/
 $dompdf = new DOMPDF();

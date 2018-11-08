@@ -8,7 +8,7 @@
 		'host' => 'localhost',
 		'user' => 'root',
 		'pass' => '',
-		'db' => 'respaldo_ssa_2018_09_10' 
+		'db' => 'r_ssa_2018_11_08' 
 	);
 	/**/
 
